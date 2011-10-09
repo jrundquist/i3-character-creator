@@ -1,0 +1,150 @@
+[01-Apr-2011 00:36:07] PHP Parse error:  syntax error, unexpected T_PUBLIC in /home/untol1/public_html/testcb/cb_backend/card.php on line 3
+[01-Apr-2011 00:39:00] PHP Parse error:  syntax error, unexpected '}' in /home/untol1/public_html/testcb/cb_backend/character.php on line 64
+[01-Apr-2011 00:39:52] PHP Parse error:  syntax error, unexpected T_PUBLIC in /home/untol1/public_html/testcb/cb_backend/card.php on line 3
+[01-Apr-2011 00:45:48] PHP Warning:  Invalid argument supplied for foreach() in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 7
+[01-Apr-2011 00:47:53] PHP Warning:  Invalid argument supplied for foreach() in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 7
+[01-Apr-2011 00:47:58] PHP Warning:  Invalid argument supplied for foreach() in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 7
+[01-Apr-2011 00:52:22] PHP Warning:  Invalid argument supplied for foreach() in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 7
+[01-Apr-2011 00:53:43] PHP Warning:  Invalid argument supplied for foreach() in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 7
+[01-Apr-2011 00:53:44] PHP Warning:  Invalid argument supplied for foreach() in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 7
+[01-Apr-2011 00:56:49] PHP Warning:  Invalid argument supplied for foreach() in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 14
+[01-Apr-2011 00:58:40] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cookie - headers already sent by (output started at /home/untol1/public_html/testcb/cb_backend/user_login.php:5) in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 7
+[01-Apr-2011 00:58:40] PHP Warning:  session_start() [<a href='function.session-start'>function.session-start</a>]: Cannot send session cache limiter - headers already sent (output started at /home/untol1/public_html/testcb/cb_backend/user_login.php:5) in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 7
+[01-Apr-2011 01:29:44] PHP Warning:  require(session.inc) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 2
+[01-Apr-2011 01:29:44] PHP Warning:  require(session.inc) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 2
+[01-Apr-2011 01:29:44] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'session.inc' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 2
+[01-Apr-2011 01:30:31] PHP Warning:  require(../../session.inc) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 2
+[01-Apr-2011 01:30:31] PHP Warning:  require(../../session.inc) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 2
+[01-Apr-2011 01:30:31] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required '../../session.inc' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 2
+[01-Apr-2011 01:31:45] PHP Warning:  require(../../session.inc) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 2
+[01-Apr-2011 01:31:45] PHP Warning:  require(../../session.inc) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 2
+[01-Apr-2011 01:31:45] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required '../../session.inc' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 2
+[01-Apr-2011 01:32:19] PHP Warning:  Invalid argument supplied for foreach() in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 10
+[01-Apr-2011 01:32:59] PHP Warning:  Invalid argument supplied for foreach() in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 8
+[01-Apr-2011 01:47:36] PHP Warning:  require(session.inc) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[01-Apr-2011 01:47:36] PHP Warning:  require(session.inc) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[01-Apr-2011 01:47:36] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'session.inc' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[01-Apr-2011 12:37:31] PHP Warning:  require(session.inc) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[01-Apr-2011 12:37:31] PHP Warning:  require(session.inc) [<a href='function.require'>function.require</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[01-Apr-2011 12:37:31] PHP Fatal error:  require() [<a href='function.require'>function.require</a>]: Failed opening required 'session.inc' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[01-Apr-2011 13:24:24] PHP Parse error:  syntax error, unexpected T_VAR in /home/untol1/public_html/testcb/cb_backend/src.php on line 10
+[01-Apr-2011 13:25:20] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/untol1/public_html/testcb/cb_backend/src.php on line 10
+[01-Apr-2011 13:26:50] PHP Parse error:  syntax error, unexpected '{' in /home/untol1/public_html/testcb/cb_backend/src.php on line 9
+[01-Apr-2011 13:27:18] PHP Warning:  opendir() [<a href='function.opendir'>function.opendir</a>]: open_basedir restriction in effect. File(/) is not within the allowed path(s): ('.:/proc/uptime:/tmp:/home:/usr/local/lib/php:/nfs/home:/usr/home:/usr/local/bin/') in /home/untol1/public_html/testcb/cb_backend/src.php on line 16
+[01-Apr-2011 13:27:18] PHP Warning:  opendir(/) [<a href='function.opendir'>function.opendir</a>]: failed to open dir: Operation not permitted in /home/untol1/public_html/testcb/cb_backend/src.php on line 16
+[01-Apr-2011 13:27:18] PHP Warning:  readdir(): supplied argument is not a valid Directory resource in /home/untol1/public_html/testcb/cb_backend/src.php on line 18
+[01-Apr-2011 13:27:18] PHP Warning:  closedir(): supplied argument is not a valid Directory resource in /home/untol1/public_html/testcb/cb_backend/src.php on line 22
+[01-Apr-2011 13:27:59] PHP Warning:  opendir(/home) [<a href='function.opendir'>function.opendir</a>]: failed to open dir: Permission denied in /home/untol1/public_html/testcb/cb_backend/src.php on line 16
+[01-Apr-2011 13:27:59] PHP Warning:  readdir(): supplied argument is not a valid Directory resource in /home/untol1/public_html/testcb/cb_backend/src.php on line 18
+[01-Apr-2011 13:27:59] PHP Warning:  closedir(): supplied argument is not a valid Directory resource in /home/untol1/public_html/testcb/cb_backend/src.php on line 22
+[01-Apr-2011 13:38:37] PHP Fatal error:  Call to undefined function  db_fetch_object() in /home/untol1/public_html/testsite/includes/session.inc on line 32
+[01-Apr-2011 13:39:23] PHP Fatal error:  Call to undefined function  db_fetch_object() in /home/untol1/public_html/testsite/includes/session.inc on line 32
+[01-Apr-2011 13:39:24] PHP Fatal error:  Call to undefined function  db_fetch_object() in /home/untol1/public_html/testsite/includes/session.inc on line 32
+[01-Apr-2011 13:43:17] PHP Fatal error:  Call to undefined function  db_fetch_object() in /home/untol1/public_html/testsite/includes/session.inc on line 32
+[01-Apr-2011 13:44:45] PHP Warning:  require_once(./includes/database.mysql-common.inc) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testsite/includes/database.mysql.inc on line 15
+[01-Apr-2011 13:44:45] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required './includes/database.mysql-common.inc' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/untol1/public_html/testsite/includes/database.mysql.inc on line 15
+[01-Apr-2011 13:46:04] PHP Fatal error:  Call to undefined function  sess_read() in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 17
+[01-Apr-2011 13:46:23] PHP Fatal error:  Call to undefined function  db_fetch_object() in /home/untol1/public_html/testsite/includes/session.inc on line 32
+[01-Apr-2011 13:51:27] PHP Fatal error:  Call to undefined function  db_fetch_object() in /home/untol1/public_html/testsite/includes/session.inc on line 32
+[01-Apr-2011 13:51:28] PHP Fatal error:  Call to undefined function  db_fetch_object() in /home/untol1/public_html/testsite/includes/session.inc on line 32
+[01-Apr-2011 13:55:16] PHP Warning:  require_once(./includes/cache.inc) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testsite/includes/bootstrap.inc on line 1009
+[01-Apr-2011 13:55:16] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required './includes/cache.inc' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/untol1/public_html/testsite/includes/bootstrap.inc on line 1009
+[01-Apr-2011 13:59:11] PHP Fatal error:  Call to undefined function  _drupal_boostrap_full() in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 16
+[01-Apr-2011 13:59:34] PHP Fatal error:  Call to undefined function  _drupal_boostrap_full() in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 17
+[01-Apr-2011 13:59:52] PHP Warning:  require_once(./includes/theme.inc) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testsite/includes/common.inc on line 2589
+[01-Apr-2011 13:59:52] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required './includes/theme.inc' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/untol1/public_html/testsite/includes/common.inc on line 2589
+[01-Apr-2011 14:05:40] PHP Fatal error:  Call to undefined function  sess_read() in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 22
+[01-Apr-2011 14:06:46] PHP Fatal error:  Call to undefined function  sess_read() in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 23
+[01-Apr-2011 14:06:47] PHP Fatal error:  Call to undefined function  sess_read() in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 23
+[01-Apr-2011 14:06:54] PHP Fatal error:  Call to undefined function  sess_read() in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 23
+[06-Apr-2011 07:13:03] PHP Parse error:  syntax error, unexpected T_PUBLIC in /home/untol1/public_html/testcb/cb_backend/card.php on line 4
+[06-Apr-2011 07:14:11] PHP Parse error:  syntax error, unexpected T_PRIVATE in /home/untol1/public_html/testcb/cb_backend/card.php on line 12
+[06-Apr-2011 07:15:44] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/untol1/public_html/testcb/cb_backend/card.php on line 15
+[06-Apr-2011 07:16:07] PHP Fatal error:  Cannot use the final modifier on an abstract class member in /home/untol1/public_html/testcb/cb_backend/card.php on line 67
+[06-Apr-2011 07:18:28] PHP Parse error:  syntax error, unexpected T_CLASS, expecting T_VARIABLE in /home/untol1/public_html/testcb/cb_backend/card.php on line 67
+[06-Apr-2011 07:19:15] PHP Parse error:  syntax error, unexpected T_CLASS, expecting T_VARIABLE in /home/untol1/public_html/testcb/cb_backend/card.php on line 67
+[06-Apr-2011 07:19:32] PHP Parse error:  syntax error, unexpected T_CLASS, expecting T_VARIABLE in /home/untol1/public_html/testcb/cb_backend/card.php on line 67
+[06-Apr-2011 07:21:57] PHP Fatal error:  Cannot redeclare Character::$currentUP in /home/untol1/public_html/testcb/cb_backend/character.php on line 10
+[06-Apr-2011 07:27:47] PHP Fatal error:  Cannot redeclare Character::setcurrentUP() in /home/untol1/public_html/testcb/cb_backend/character.php on line 70
+[06-Apr-2011 07:30:53] PHP Fatal error:  Call to undefined function  card() in /home/untol1/public_html/testcb/cb_backend/test-back-end.php on line 8
+[06-Apr-2011 07:31:16] PHP Fatal error:  Call to undefined function  checktype() in /home/untol1/public_html/testcb/cb_backend/card.php on line 36
+[06-Apr-2011 07:32:26] PHP Fatal error:  Call to undefined function  checktype() in /home/untol1/public_html/testcb/cb_backend/card.php on line 36
+[06-Apr-2011 07:32:27] PHP Fatal error:  Call to undefined function  checktype() in /home/untol1/public_html/testcb/cb_backend/card.php on line 36
+[07-Apr-2011 16:54:06] PHP Parse error:  syntax error, unexpected T_PUBLIC in /home/untol1/public_html/testcb/cb_backend/character.php on line 101
+[07-Apr-2011 16:54:46] PHP Warning:  Invalid argument supplied for foreach() in /home/untol1/public_html/testcb/cb_backend/deck.php on line 26
+[07-Apr-2011 16:54:46] PHP Fatal error:  Call to undefined function  setid() in /home/untol1/public_html/testcb/cb_backend/character.php on line 17
+[07-Apr-2011 16:56:16] PHP Warning:  Invalid argument supplied for foreach() in /home/untol1/public_html/testcb/cb_backend/deck.php on line 26
+[07-Apr-2011 16:56:16] PHP Fatal error:  Call to undefined function  setid() in /home/untol1/public_html/testcb/cb_backend/character.php on line 17
+[07-Apr-2011 16:56:44] PHP Warning:  Invalid argument supplied for foreach() in /home/untol1/public_html/testcb/cb_backend/deck.php on line 26
+[07-Apr-2011 16:56:44] PHP Fatal error:  Call to undefined function  setid() in /home/untol1/public_html/testcb/cb_backend/character.php on line 17
+[07-Apr-2011 16:57:09] PHP Warning:  Invalid argument supplied for foreach() in /home/untol1/public_html/testcb/cb_backend/deck.php on line 27
+[07-Apr-2011 16:57:09] PHP Fatal error:  Call to undefined function  setid() in /home/untol1/public_html/testcb/cb_backend/character.php on line 17
+[07-Apr-2011 17:00:10] PHP Warning:  Invalid argument supplied for foreach() in /home/untol1/public_html/testcb/cb_backend/deck.php on line 27
+[07-Apr-2011 17:00:10] PHP Fatal error:  Call to undefined function  setid() in /home/untol1/public_html/testcb/cb_backend/character.php on line 17
+[07-Apr-2011 17:00:31] PHP Warning:  Invalid argument supplied for foreach() in /home/untol1/public_html/testcb/cb_backend/deck.php on line 27
+[07-Apr-2011 17:00:31] PHP Fatal error:  Call to undefined function  setid() in /home/untol1/public_html/testcb/cb_backend/character.php on line 17
+[07-Apr-2011 17:01:23] PHP Fatal error:  Call to undefined function  setid() in /home/untol1/public_html/testcb/cb_backend/character.php on line 17
+[07-Apr-2011 17:02:08] PHP Fatal error:  Call to undefined method Character::setID() in /home/untol1/public_html/testcb/cb_backend/character.php on line 17
+[07-Apr-2011 17:12:12] PHP Fatal error:  Call to undefined function  addcard() in /home/untol1/public_html/testcb/cb_backend/test-back-end.php on line 19
+[07-Apr-2011 17:12:28] PHP Fatal error:  Call to undefined function  getstat() in /home/untol1/public_html/testcb/cb_backend/character.php on line 87
+[07-Apr-2011 17:18:29] PHP Parse error:  syntax error, unexpected '[' in /home/untol1/public_html/testcb/cb_backend/character.php on line 88
+[07-Apr-2011 19:00:07] PHP Fatal error:  Call to undefined function  getstat() in /home/untol1/public_html/testcb/cb_backend/character.php on line 106
+[12-Apr-2011 19:51:05] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/untol1/public_html/testcb/cb_backend/backend_unittests.php on line 15
+[12-Apr-2011 20:01:58] PHP Parse error:  syntax error, unexpected T_PRINT in /home/untol1/public_html/testcb/cb_backend/backend_unittests.php on line 29
+[12-Apr-2011 20:03:20] PHP Parse error:  syntax error, unexpected T_PRINT in /home/untol1/public_html/testcb/cb_backend/backend_unittests.php on line 29
+[12-Apr-2011 20:04:36] PHP Parse error:  syntax error, unexpected T_PRINT in /home/untol1/public_html/testcb/cb_backend/backend_unittests.php on line 29
+[12-Apr-2011 20:04:56] PHP Parse error:  syntax error, unexpected T_STRING in /home/untol1/public_html/testcb/cb_backend/backend_unittests.php on line 29
+[12-Apr-2011 20:05:16] PHP Parse error:  syntax error, unexpected T_STRING in /home/untol1/public_html/testcb/cb_backend/backend_unittests.php on line 29
+[13-Apr-2011 03:56:14] PHP Warning:  array_key_exists() [<a href='function.array-key-exists'>function.array-key-exists</a>]: The second argument should be either an array or an object in /home/untol1/public_html/testcb/cb_backend/deck.php on line 75
+[13-Apr-2011 05:30:24] PHP Fatal error:  Call to undefined function  hascard() in /home/untol1/public_html/testcb/cb_backend/deck.php on line 83
+[13-Apr-2011 05:39:55] PHP Warning:  Missing argument 2 for save_cbdb_character(), called in /home/untol1/public_html/testcb/cb_backend/character.php on line 199 and defined in /home/untol1/public_html/testcb/cb_backend/db_lib.php on line 81
+[13-Apr-2011 05:39:55] PHP Warning:  Missing argument 3 for save_cbdb_character(), called in /home/untol1/public_html/testcb/cb_backend/character.php on line 199 and defined in /home/untol1/public_html/testcb/cb_backend/db_lib.php on line 81
+[13-Apr-2011 05:39:55] PHP Fatal error:  Cannot access private property Character::$charID in /home/untol1/public_html/testcb/cb_backend/db_lib.php on line 85
+[13-Apr-2011 05:44:03] PHP Fatal error:  Cannot access private property Character::$charID in /home/untol1/public_html/testcb/cb_backend/db_lib.php on line 85
+[13-Apr-2011 05:49:22] PHP Fatal error:  Cannot re-assign $this in /home/untol1/public_html/testcb/cb_backend/character.php on line 215
+[13-Apr-2011 05:54:06] PHP Fatal error:  Cannot access private property Character::$charID in /home/untol1/public_html/testcb/cb_backend/db_lib.php on line 107
+[13-Apr-2011 07:17:05] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting ',' or ';' in /home/untol1/public_html/testcb/cb_backend/backend_unittests.php on line 107
+[13-Apr-2011 07:20:38] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting ',' or ';' in /home/untol1/public_html/testcb/cb_backend/backend_unittests.php on line 107
+[13-Apr-2011 07:24:08] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting ',' or ';' in /home/untol1/public_html/testcb/cb_backend/backend_unittests.php on line 107
+[13-Apr-2011 07:25:12] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home/untol1/public_html/testcb/cb_backend/backend_unittests.php on line 107
+[13-Apr-2011 07:27:09] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting ',' or ';' in /home/untol1/public_html/testcb/cb_backend/backend_unittests.php on line 108
+[13-Apr-2011 07:27:43] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home/untol1/public_html/testcb/cb_backend/backend_unittests.php on line 107
+[13-Apr-2011 07:28:19] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting ',' or ';' in /home/untol1/public_html/testcb/cb_backend/backend_unittests.php on line 107
+[13-Apr-2011 07:32:39] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting ',' or ';' in /home/untol1/public_html/testcb/cb_backend/backend_unittests.php on line 110
+[13-Apr-2011 07:33:06] PHP Fatal error:  Using $this when not in object context in /home/untol1/public_html/testcb/cb_backend/character.php on line 231
+[13-Apr-2011 07:58:56] PHP Fatal error:  Cannot re-assign $this in /home/untol1/public_html/testcb/cb_backend/character.php on line 231
+[13-Apr-2011 08:03:35] PHP Fatal error:  Call to undefined method Character::setLastModified() in /home/untol1/public_html/testcb/cb_backend/character.php on line 235
+[13-Apr-2011 08:05:01] PHP Fatal error:  Call to a member function getTypeAsStr() on a non-object in /home/untol1/public_html/testcb/cb_backend/character.php on line 122
+[13-Apr-2011 08:09:53] PHP Fatal error:  Call to undefined function  sess_read() in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 23
+[13-Apr-2011 08:11:11] PHP Fatal error:  Call to a member function printCardInfo() on a non-object in /home/untol1/public_html/testcb/cb_backend/character.php on line 239
+[13-Apr-2011 08:12:14] PHP Warning:  Missing argument 3 for delete_cbdb_character(), called in /home/untol1/public_html/testcb/cb_backend/character.php on line 223 and defined in /home/untol1/public_html/testcb/cb_backend/db_lib.php on line 121
+[13-Apr-2011 08:42:27] PHP Warning:  readfile(/home/untol1/public_html/testsite/testsite/install.php) [<a href='function.readfile'>function.readfile</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testcb/cb_backend/echo.php on line 2
+[17-Apr-2011 12:51:15] PHP Parse error:  syntax error, unexpected T_VAR in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 18
+[17-Apr-2011 12:52:14] PHP Warning:  require_once(./includes/cache.inc) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testsite/includes/bootstrap.inc on line 1009
+[17-Apr-2011 12:52:14] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required './includes/cache.inc' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/untol1/public_html/testsite/includes/bootstrap.inc on line 1009
+[17-Apr-2011 12:54:20] PHP Warning:  require_once(includes/bootstrap.inc) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[17-Apr-2011 12:54:20] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required 'includes/bootstrap.inc' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[17-Apr-2011 12:57:30] PHP Warning:  require_once(./includes/bootstrap.inc) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[17-Apr-2011 12:57:30] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required './includes/bootstrap.inc' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[17-Apr-2011 12:58:36] PHP Warning:  require_once(./includes/cache.inc) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testsite/includes/bootstrap.inc on line 1009
+[17-Apr-2011 12:58:36] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required './includes/cache.inc' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/untol1/public_html/testsite/includes/bootstrap.inc on line 1009
+[17-Apr-2011 13:00:27] PHP Warning:  require_once(includes/bootstrap.inc) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[17-Apr-2011 13:00:27] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required 'includes/bootstrap.inc' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[17-Apr-2011 13:03:16] PHP Warning:  require_once(includes/bootstrap.inc) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[17-Apr-2011 13:03:16] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required 'includes/bootstrap.inc' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[17-Apr-2011 13:04:09] PHP Warning:  require_once(includes/bootstrap.inc) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[17-Apr-2011 13:04:09] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required 'includes/bootstrap.inc' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[17-Apr-2011 13:05:21] PHP Warning:  require_once(./includes/bootstrap.inc) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[17-Apr-2011 13:05:21] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required './includes/bootstrap.inc' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[17-Apr-2011 13:06:05] PHP Warning:  require_once(./includes/cache.inc) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testsite/includes/bootstrap.inc on line 1009
+[17-Apr-2011 13:06:05] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required './includes/cache.inc' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/untol1/public_html/testsite/includes/bootstrap.inc on line 1009
+[17-Apr-2011 13:37:47] PHP Warning:  require_once(./includes/bootstrap.inc) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[17-Apr-2011 13:37:47] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required './includes/bootstrap.inc' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[18-Apr-2011 07:06:04] PHP Warning:  require_once(./includes/bootstrap.inc) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[18-Apr-2011 07:06:04] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required './includes/bootstrap.inc' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[18-Apr-2011 08:53:58] PHP Warning:  require_once(./includes/bootstrap.inc) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[18-Apr-2011 08:53:58] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required './includes/bootstrap.inc' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 12
+[18-Apr-2011 15:45:17] PHP Parse error:  syntax error, unexpected '*' in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 21
+[18-Apr-2011 15:45:46] PHP Fatal error:  Call to undefined function  drupal_bootstrap() in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 13
+[20-Apr-2011 08:30:24] PHP Parse error:  syntax error, unexpected T_VAR in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 20
+[20-Apr-2011 08:53:51] PHP Fatal error:  Call to undefined function  printr() in /home/untol1/public_html/testcb/cb_backend/user_login.php on line 14

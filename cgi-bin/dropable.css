@@ -1,0 +1,135 @@
+.droppable {
+    clear:both;
+    height:435px;
+    width:500px;
+}
+
+.dropped { 
+	/*background: #ccc; */
+	/*position:absolute;*/
+    /*height: 200px;*/
+	/*width: 150px; */
+	/*clip: rect(15px, 145px, 145px, 15px); */
+	/*overflow: hidden;*/
+	display: block;
+	background-size: 154px 204px;
+	background-position: -15px -15px;
+	background-repeat: no-repeat;
+	border-style:solid;
+    border-width:2px;
+	border-color: #7CFC00; 
+	
+
+}
+.ui-draggable-dragging {
+       border-color: #7CFC00;
+}
+.farc { 
+	background: #fff; 
+	width: 150px; 
+	height: 30px; 
+}
+
+.connectedSortable {
+	padding: 0 1px 1px;
+	margin-left: 0;
+	font: bold 12px Verdana, sans-serif;
+	background: gray;
+	width: 16.5em;
+	overflow-y: auto;
+}
+
+.connectedSortable li {
+	list-style: none;
+	margin: 0;
+	border-top: 1px solid gray;
+	text-align: left;
+	height: 40px;
+	background: #ccc;
+}
+
+.connectedSortable li a {
+	display: block;
+	padding: 0.25em 0.5em 0.25em 0.75em;
+	border-left: 1em solid #AAB;
+	background: #CCD;
+	text-decoration: none;
+}
+
+.connectedSortable li a:link { color: #448; }
+.connectedSortable li a:visited { color: #667; }
+
+.connectedSortable li a:hover {
+	border-color: #FE3;
+	color: #FFF;
+	background: #332;
+}
+
+#sortable {
+	height: 260px;
+}
+
+#buffer {
+	height: 100px;
+}
+
+/*#buffer {
+	padding: 0 1px 1px;
+	margin-left: 0;
+	font: bold 12px Verdana, sans-serif;
+	background: gray;
+	width: 13em;
+}
+
+#buffer li {
+	list-style: none;
+	margin: 0;
+	border-top: 1px solid gray;
+	text-align: left;
+	height: 40px;
+}
+
+#buffer li a {
+	display: block;
+	padding: 0.25em 0.5em 0.25em 0.75em;
+	border-left: 1em solid #AAB;
+	background: #CCD;
+	text-decoration: none;
+}
+
+#buffer li a:link { color: #448; }
+#buffer li a:visited { color: #667; }
+
+#buffer li a:hover {
+	border-color: #FE3;
+	color: #FFF;
+	background: #332;
+}*/
+
+/*#one { width: 154px; height: 20px; background: #ccc; }
+#two { width: 154px; height: 20px; background: #ccc;}
+#three { width: 154px; height: 20px; background: #ccc;}
+#four { width: 154px; height: 20px; background: #ccc;}*/
+.name { visibility: true; }
+#droppable { 
+	width: 600px; 
+	height: 400px; 
+	padding: 0.5em; 
+	margin: 10px; 
+	background: #999; 
+}
+#lazy { }
+.cardImg { 
+width: 150px; 
+    height: 400px;
+	overflow: hidden; 
+    border: 1px solid;
+
+}
+ 
+.cardImg img
+{
+width: 187px; 
+height: 248px;
+margin: -18px 0 0 -18px;
+}
