@@ -1,25 +1,36 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-"http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
 		<title>
 			Untold the Game -- Character Builder
 		</title>
-		<meta http-equiv="content-language" content="en-US">
-		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<meta charset=utf-8 /> 
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
 		<link rel="stylesheet" type="text/css" href="libs_n_styles/layout.css">
 		<link rel="stylesheet" type="text/css" href="libs_n_styles/popup.css">
 		<link rel="stylesheet" type="text/css" href="libs_n_styles/dropable.css">
-		<script src="libs_n_styles/jquery.min.js" type="text/javascript">
-</script>
-		<script src="libs_n_styles/jquery-ui.min.js" type="text/javascript">
-</script>
-		<script src="libs_n_styles/dropable_gen.js.php" type="text/javascript">
-</script>
-		<script src="libs_n_styles/popup.js" type="text/javascript">
-</script>
+		<script src="libs_n_styles/jquery.min.js" type="text/javascript"></script>
+		<script src="libs_n_styles/jquery-ui.min.js" type="text/javascript"></script>
+		<script src="libs_n_styles/dropable_gen.js.php" type="text/javascript"></script>
+		<script src="libs_n_styles/popup.js" type="text/javascript"></script>
 		<script type="text/javascript">
-$(document).ready(function() {          $("#divhelp").hover(function() {                    var windowWidth = document.documentElement.clientWidth;                 var windowHeight = document.documentElement.clientHeight;                   $("#overlay").css({ "top": "0", "left": windowWidth/2 - 500});                  $("#overlaydiv").fadeIn("slow");                }, function() {                     $("#overlay").hover(function(){}, function(){$("#overlaydiv").fadeOut("slow");});               });     });     
+			$(document).ready(function() {
+			    $("#divhelp").hover(function() {
+			        var windowWidth = document.documentElement.clientWidth;
+			        var windowHeight = document.documentElement.clientHeight;
+			        $("#overlay").css({
+			            "top": "0",
+			            "left": windowWidth / 2 - 500
+			        });
+			        $("#overlaydiv").fadeIn("slow");
+			    },
+			    function() {
+			        $("#overlay").hover(function() {},
+			        function() {
+			            $("#overlaydiv").fadeOut("slow");
+			        });
+			    });
+			});
 		</script>
 	</head>
 	<body id="customBody">
@@ -28,8 +39,26 @@ $(document).ready(function() {          $("#divhelp").hover(function() {        
 		</div>
 		<div id="logout" align="right" style="display:none">
 			<a href="http://www.testsite.untoldthegame.com/logout"><u>Log out</u></a>
-		</div><script language="javascript" type="text/javascript">
-$.ajax({   type: "POST",   url: "VerifySession.php",   success: function(msg){ var uid = msg;  //alert(uid);   //alert(uid.length);    if (uid.length > 0){        document.getElementById("logout").style.display = "";   }   else {      document.getElementById("login").style.display = "";    }   } });
+		</div>
+		<script>
+		
+		/** 
+		/ :TODO:
+		/ This is the login check? We should try and get this cleaned up a little
+		**/
+			$.ajax({
+			    type: "POST",
+			    url: "VerifySession.php",
+			    success: function(msg) {
+			        var uid = msg;
+			        //alert(uid);   //alert(uid.length);    
+					if (uid.length > 0){
+						document.getElementById("logout").style.display = "";
+					}else{
+						document.getElementById("login").style.display = "";
+					}
+				}
+			});
 		</script>
 		<div id="layoutCtn">
 			<div id="leftPadding"></div><!-- left padding -->
@@ -192,7 +221,8 @@ $.ajax({   type: "POST",   url: "VerifySession.php",   success: function(msg){ v
 				</p>
 			</div>
 		</center>
-		<div id="backgroundPopup"></div><!-- Overlay image -->
+		<div id="backgroundPopup"></div>
+		<!-- Overlay image -->
 		<div id="overlaydiv">
 			<img id="overlay" src="components/helpOverlay.png" name="overlay">
 		</div>
