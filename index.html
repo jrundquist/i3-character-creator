@@ -6,30 +6,32 @@
 		</title>
 		<meta charset=utf-8 /> 
 		<meta http-equiv="X-UA-Compatible" content="chrome=1">
-		<link rel="stylesheet" type="text/css" href="libs_n_styles/layout.css">
-		<link rel="stylesheet" type="text/css" href="libs_n_styles/popup.css">
-		<link rel="stylesheet" type="text/css" href="libs_n_styles/dropable.css">
-		<script src="libs_n_styles/jquery.min.js" type="text/javascript"></script>
-		<script src="libs_n_styles/jquery-ui.min.js" type="text/javascript"></script>
-		<script src="libs_n_styles/dropable_gen.js.php" type="text/javascript"></script>
-		<script src="libs_n_styles/popup.js" type="text/javascript"></script>
-		<script type="text/javascript">
+		<link rel="stylesheet" type="text/css" href="styles/layout.css">
+		<link rel="stylesheet" type="text/css" href="styles/popup.css">
+		<link rel="stylesheet" type="text/css" href="styles/dropable.css">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/dropable_gen.js.php"></script>
+		<script src="js/popup.js"></script>
+		<script>
 			$(document).ready(function() {
-			    $("#divhelp").hover(function() {
-			        var windowWidth = document.documentElement.clientWidth;
-			        var windowHeight = document.documentElement.clientHeight;
-			        $("#overlay").css({
-			            "top": "0",
-			            "left": windowWidth / 2 - 500
-			        });
-			        $("#overlaydiv").fadeIn("slow");
-			    },
-			    function() {
-			        $("#overlay").hover(function() {},
-			        function() {
-			            $("#overlaydiv").fadeOut("slow");
-			        });
-			    });
+			    $("#divhelp").hover(
+					function() {
+				        var windowWidth = document.documentElement.clientWidth;
+				        var windowHeight = document.documentElement.clientHeight;
+				        $("#overlay").css({
+				            "top": "0",
+				            "left": windowWidth / 2 - 500
+				        });
+				        $("#overlaydiv").fadeIn("slow");
+				    },
+				    function() {
+				        $("#overlay").hover(function() {},
+				        function() {
+				            $("#overlaydiv").fadeOut("slow");
+				        });
+				    }
+				);
 			});
 		</script>
 	</head>
