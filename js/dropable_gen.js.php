@@ -3,9 +3,21 @@ header("content-type: application/x-javascript");
 ?>
 
 
-
+/**
+ *	BubbleSort
+ * 
+ *	Used to sort elements in the DOM based on the CardName
+ * 
+ *	This method takes in the ID of the container element, and the type ( li, p, etc ) of
+ *	the element to sort
+ * 
+ * :KLUDGE: 
+ *  It may be best at some point to rewrite this function so that 
+ *  the DOM is not manipulated each time there is a swap
+ *  this operation is expencive and causes the browser to 'repaint'
+ * 	the page each time. 
+ */
 function bubbleSort(id, type){
-	console.log("sorting...");
 	var len = $(id).children().length;
 	var i = 1;
 	var j = 1;
@@ -27,39 +39,22 @@ function bubbleSort(id, type){
 	}
 }
 
-
-
-$("#sortable").change(function (){
-	alert("change");
-});
+// $("#sortable").change(function (){
+// 	alert("change");
+// });
 
 
 function hoverOverCard(id){
-
-//	console.log("hover on: "+id);
-/*	console.log("test: "+ $("#"+id+" #closeSpan"));
-	console.log("style: "+ $("#"+id+" #closeSpan").attr("style"));
-	$("#"+id+" #closeSpan").attr("style","display: align:right");
-	$("#"+id+" #zoomSpan").attr("style","display: align:right");
-*/
-
 	$("#"+id).children().each(function() {
-		this.setAttribute("style","display:; float:right;background-color:white;");
+		$(this).css({"display":"", "float":"right", "background-color":"white"});
 	});
-
 
 }
 
 function hoverOffCard(id){
 
-//	console.log("hover off: "+id);
-/*	$("#"+id+" #closeSpan").attr("style","display:none");
-	$("#"+id+" #zoomSpan").attr("style","display:none");
-*/
-
-
 	$("#"+id).children().each(function() {
-		this.setAttribute("style","display:none;");
+		$(this).hide();
 	});
 	
 }
@@ -106,7 +101,7 @@ $(document).ready(function() {
 						}
 						//$.post("char_controller.php?type=save_character", {  });
 						refreshAllData();
-bubbleSort("#buffer","li");
+						bubbleSort("#buffer","li");
 						});
 				}
 
@@ -157,7 +152,7 @@ bubbleSort("#buffer","li");
 								}, "json");
 						}
 
-bubbleSort("#sortable","li");
+						bubbleSort("#sortable","li");
 
 						});
 				}
@@ -188,49 +183,11 @@ bubbleSort("#sortable","li");
 
 			});
 			if (duplicate===1) return;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	            dropped = true;
 	            $(event.target).addClass('dropped');
+				$(this).append("<div style=\"margin:10px;\" onmouseover=hoverOverCard(\""+current.attr("id")+"\") onmouseout=hoverOffCard(\""+current.attr("id")+"\")  ondblclick=dispCardDetails(\""+current.attr("id")+"\") class=\"farc\" id=\""+current.attr("id")+"\"><span style=\"display:none;float:right;\" id=\"closeSpan\" onclick=$(this).parent().remove()><img style=\"cursor:pointer;\" width=\"25px\" height=\"25px\" src=\"components/buttons/XButton.png\"/></span><span style=\"display:none;float:right;\" id=\"zoomSpan\" onclick=dispCardDetails(\""+current.attr("id")+"\")><img style=\"cursor:pointer;\" width=\"25px\" height=\"25px\" src=\"components/buttons/zoom.png\"/></span></div>");
 
-
-
-
-
-
-//	            $(this).append("<div style=\"margin:10px;\" onmouseover=hoverOverCard(\""+current.attr("id")+"\") onmouseout=hoverOffCard(\""+current.attr("id")+"\")  ondblclick=dispCardDetails(\""+current.attr("id")+"\") class=\"farc\" id=\""+current.attr("id")+"\"><span style=\"display:;\" id=\"zoomSpan\" onclick=dispCardDetails(\""+current.attr("id")+"\")><img style=\"cursor:pointer;\" width=\"25px\" height=\"25px\" src=\"components/buttons/zoom.png\"/></span><span style=\"display:;\" id=\"closeSpan\" onclick=$(this).parent().remove()><img style=\"cursor:pointer;\" width=\"25px\" height=\"25px\" src=\"components/buttons/XButton.png\"/></span></div>");
-
-
-
-$(this).append("<div style=\"margin:10px;\" onmouseover=hoverOverCard(\""+current.attr("id")+"\") onmouseout=hoverOffCard(\""+current.attr("id")+"\")  ondblclick=dispCardDetails(\""+current.attr("id")+"\") class=\"farc\" id=\""+current.attr("id")+"\"><span style=\"display:none;float:right;\" id=\"closeSpan\" onclick=$(this).parent().remove()><img style=\"cursor:pointer;\" width=\"25px\" height=\"25px\" src=\"components/buttons/XButton.png\"/></span><span style=\"display:none;float:right;\" id=\"zoomSpan\" onclick=dispCardDetails(\""+current.attr("id")+"\")><img style=\"cursor:pointer;\" width=\"25px\" height=\"25px\" src=\"components/buttons/zoom.png\"/></span></div>");
-
-
-
-
-
-
-	            $(".farc").draggable({ containment: "#canvas" });
+				$(".farc").draggable({ containment: "#canvas" });
 	            $(".farc").css('position', 'absolute');
 	            $(".farc").css('width', '152px');
 	            $(".farc").css('height', '203px');
@@ -258,48 +215,27 @@ $(this).append("<div style=\"margin:10px;\" onmouseover=hoverOverCard(\""+curren
 	            $("#four.farc").css('background-image', 'url(4.jpg)');
 
 
+				<?php
+				//Sets the $userid variable.
+				require_once('../get_userid.php');
 
+				require_once('../cb_backend/deck.php');
+				require_once('../cb_backend/card.php');
 
-<?php
-//Sets the $userid variable.
-require_once('../get_userid.php');
+				$deck = new Deck($userid);
 
-require_once('../cb_backend/deck.php');
-require_once('../cb_backend/card.php');
-
-$deck = new Deck($userid);
-
-if(!$deck) {
-	echo json_encode("failure");
-}
-else {
-	$deckarr = $deck->getDeckArr();
-	$toretarr = array();
-	foreach($deckarr as $card) {
-		echo "	            $(\"#".$card->id.".farc\").css('background-image', 'url(\"card_imgs/".addslashes($card->picture)."\")');";
-		echo "\n";
-	}
-}
-?>
-
-
-
-
-
-
-		//ui.draggable.append('<a id="'+current.attr("id")+'" class="remove_link" onClick="$(\'#'+current.attr("id")+'.farc\').remove(); $(this).remove();">Remove From Table</a>');
-
-
-
-
-
-
-
-
-
-
-
-
+				if(!$deck) {
+					echo json_encode("failure");
+				}
+				else {
+					$deckarr = $deck->getDeckArr();
+					$toretarr = array();
+					foreach($deckarr as $card) {
+						echo "$(\"#".$card->id.".farc\").css('background-image', 'url(\"card_imgs/".addslashes($card->picture)."\")');";
+						echo "\n";
+					}
+				}
+				?>
 
 
 	        }

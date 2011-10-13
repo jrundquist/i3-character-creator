@@ -1,8 +1,20 @@
 
+/**
+ *	BubbleSort
+ * 
+ *	Used to sort elements in the DOM based on the CardName
+ * 
+ *	This method takes in the ID of the container element, and the type ( li, p, etc ) of
+ *	the element to sort
+ * 
+ * :KLUDGE: 
+ *  It may be best at some point to rewrite this function so that 
+ *  the DOM is not manipulated each time there is a swap
+ *  this operation is expencive and causes the browser to 'repaint'
+ * 	the page each time. 
+ */
 function bubbleSort(id, type){
 	var len = $(id).children().length;
-//	console.log("sorting...: "+len);
-
 	var i = 1;
 	var j = 1;
 	for (i = 1; i < len; i++){
@@ -270,7 +282,7 @@ $(document).ready(function() {
 		var presbuff = new Array();
 		$("#buffer").children().each(function() {
 			$("#paragraphPopup #right").html($("#paragraphPopup #right").html() + '<option cardname="'+$(this).attr("cardname")+'" cardtype="'+$(this).attr("cardtype")+'"  value="' + $(this).attr("id") + '" style="color: ' + $(this).css("color") + ';        background:none repeat scroll 0 0 #CCCCCC;                   ">' + $(this).text() + '</option>');
-bubbleSort("#right","option");
+			bubbleSort("#right","option");
 			presbuff[$(this).attr("id")] = $(this).text();
 			});
 		var presdeck;
@@ -281,9 +293,7 @@ bubbleSort("#right","option");
                 tempcard = presdeck[c];
 				if(!(c in presbuff)) {
                     $("#paragraphPopup #left").html($("#paragraphPopup #left").html() + '<option cardname="'+tempcard["listname"]+'"  cardtype="'+tempcard["cardtype"]+'"  value="' + c + '" style="color: ' + cardTypeToColor(tempcard["cardtype"]) + ';       background:none repeat scroll 0 0 #CCCCCC;         ">' + tempcard["listname"] + '</option>');
-bubbleSort("#left","option");
-
-
+					bubbleSort("#left","option");
                 }
 			}
 			}, "json");
