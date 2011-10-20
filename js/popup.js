@@ -281,22 +281,20 @@ $(document).ready(function() {
 		//Populate the buffer cards.
 		var presbuff = new Array();
 		$("#buffer").children().each(function() {
-			$("#paragraphPopup #right").html($("#paragraphPopup #right").html() + '<option cardname="'+$(this).attr("cardname")+'" cardtype="'+$(this).attr("cardtype")+'"  value="' + $(this).attr("id") + '" style="color: ' + $(this).css("color") + ';        background:none repeat scroll 0 0 #CCCCCC;                   ">' + $(this).text() + '</option>');
-			bubbleSort("#right","option");
+			$("#paragraphPopup #right").append('<option cardname="'+$(this).attr("cardname")+'" cardtype="'+$(this).attr("cardtype")+'"  value="' + $(this).attr("id") + '" style="color: ' + $(this).css("color") + '; background:none repeat scroll 0 0 #CCCCCC;">' + $(this).text() + '</option>');
+			// bubbleSort("#right","option");
 			presbuff[$(this).attr("id")] = $(this).text();
 			});
 		var presdeck;
 		var tempcard;
 		$.post("deck_controller.php?type=get_deckarray", { }, function(data){
-			presdeck = data;
-			for(var c in presdeck) {
-                tempcard = presdeck[c];
-				if(!(c in presbuff)) {
-                    $("#paragraphPopup #left").html($("#paragraphPopup #left").html() + '<option cardname="'+tempcard["listname"]+'"  cardtype="'+tempcard["cardtype"]+'"  value="' + c + '" style="color: ' + cardTypeToColor(tempcard["cardtype"]) + ';       background:none repeat scroll 0 0 #CCCCCC;         ">' + tempcard["listname"] + '</option>');
-					bubbleSort("#left","option");
+			for(var c in data) {
+                tempcard = data[c];
+				if(!(tempcard.id in presbuff)) {
+                    $("#paragraphPopup #left").append('<option cardname="'+tempcard["listname"]+'"  cardtype="'+tempcard["cardtype"]+'"  value="' + tempcard["id"] + '" style="color: ' + cardTypeToColor(tempcard["cardtype"]) + '; background:none repeat scroll 0 0 #CCCCCC;">' + tempcard["listname"] + '</option>');
                 }
 			}
-			}, "json");
+		}, "json");
 
 
 
@@ -313,8 +311,8 @@ $(document).ready(function() {
 				$("#" + to).append($(this).clone());
 				$(this).remove();
 			});
-bubbleSort("#right","option");
-bubbleSort("#left","option");
+		// bubbleSort("#right","option");
+		// bubbleSort("#left","option");
 		});
 
 
@@ -327,8 +325,8 @@ bubbleSort("#left","option");
 				$("#" + to).append($(this).clone());
 				$(this).remove();
 			});
-bubbleSort("#right","option");
-bubbleSort("#left","option");
+// bubbleSort("#right","option");
+// bubbleSort("#left","option");
 		});
 		
 		$("#left").dblclick(function(){  
@@ -338,8 +336,8 @@ bubbleSort("#left","option");
 				$("#" + to).append($(this).clone());
 				$(this).remove();
 			});
-bubbleSort("#right","option");
-bubbleSort("#left","option");
+// bubbleSort("#right","option");
+// bubbleSort("#left","option");
 		});
 
 		//When the submit button is used on the popup.

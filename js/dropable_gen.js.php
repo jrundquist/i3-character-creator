@@ -17,24 +17,39 @@ header("content-type: application/x-javascript");
  *  this operation is expencive and causes the browser to 'repaint'
  * 	the page each time. 
  */
-function bubbleSort(id, type){
-	var len = $(id).children().length;
-	var i = 1;
-	var j = 1;
-	for (i = 1; i < len; i++){
-		for (j=i+1; j <=len; j++){
-			var one = $(id+" "+type+":nth-child("+i+")");
-			var two = $(id+" "+type+":nth-child("+j+")");
-			var oneName = $(one).attr("cardname");
-			var twoName = $(two).attr("cardname");
-			oneName = oneName.substring(oneName.indexOf(" ")+1);
-			twoName = twoName.substring(twoName.indexOf(" ")+1);
+function selectionSort(id, type){
+	var $el =  $(id),
+		$list = $el.children(type),
+		len = $list.length;
+		//$buffer = $el.clone();
+	
+	// Clear the dom 
+	for( i = 0; i < len; i++ ){
+		$min = $($list[i]);
+		indx = i;
+		for ( j = i+1; j < len; j++ ){
+			oneName = $min.attr("cardname");
+			twoName = $($list[j]).attr("cardname");
+			oneName = oneName.split(" ")[1];
+			twoName = twoName.split(" ")[1];;
 			if (twoName < oneName){
-				var copy_one = $(one).clone(true);
-				var copy_two = $(two).clone(true);
-				$(one).replaceWith(copy_two);
-				$(two).replaceWith(copy_one);
-			}			
+				$min = $($list[j]);
+				indx = j;
+			}
+		}	
+		
+		if ( i != indx ){
+			console.log('swap ',i,' ~ ',indx);
+			// copy_one = $($list[i]).clone(true);
+			// copy_two = $($list[indx]).clone(true);
+			// $($list[i]).replaceWith(copy_two);
+			// $($list[indx]).replaceWith(copy_one);
+		
+			swp = $list[i];
+			$list[i] = $list[indx];
+			$list[indx] = swp;
+			
+			console.log($list);
 		}
 	}
 }

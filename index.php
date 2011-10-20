@@ -1,7 +1,20 @@
+<?php
+require_once('cb_backend/db_lib.php');
+
+// Check user login 
+if (!isset($userid)){
+	if (isset($_COOKIE["SESSf11d1277d21527f42a2c13ff12d4cffc"])){
+		$sess_id = $_COOKIE["SESSf11d1277d21527f42a2c13ff12d4cffc"];
+		if (strlen($sess_id)>0)
+			$the_real_userid = get_drudb_uid($sess_id,get_drudb_connection());
+	}
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
-	<head>\
-	<!-- Greg commit/push test -->
+	<head>
 		<title>
 			Untold the Game -- Character Builder
 		</title>
@@ -43,25 +56,13 @@
 		<div id="logout" align="right" style="display:none">
 			<a href="http://www.testsite.untoldthegame.com/logout"><u>Log out</u></a>
 		</div>
-		<script>
 		
-		/** 
-		/ :TODO:
-		/ This is the login check? We should try and get this cleaned up a little
-		**/
-			$.ajax({
-			    type: "POST",
-			    url: "VerifySession.php",
-			    success: function(msg) {
-			        var uid = msg;
-			        //alert(uid);   //alert(uid.length);    
-					if (uid.length > 0){
-						document.getElementById("logout").style.display = "";
-					}else{
-						document.getElementById("login").style.display = "";
-					}
-				}
-			});
+		<script>
+		<?php if (strlen($the_real_userid)>0):?>
+			document.getElementById("logout").style.display = "";
+		<?php else; ?>
+			document.getElementById("login").style.display = "";
+		<?php endif;?>
 		</script>
 		<div id="layoutCtn">
 			<div id="leftPadding"></div><!-- left padding -->
