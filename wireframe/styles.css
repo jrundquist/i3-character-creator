@@ -110,7 +110,7 @@ body{
 }
 
 #charDisc p{
-	background-color: white;
+	background-color: #fff;
 	margin: 0px;
 	padding: 5px;
 	text-align: justify;
@@ -155,7 +155,7 @@ body{
 	text-align: center;
 }
 #pointsUP{
-	background-color: white;
+	background-color: #fff;
 }
 #pointsSB{
 }
@@ -171,27 +171,31 @@ body{
 	height: 20px;
 	padding:5px;
 	background-color:#000;
-	color:#FFF;
+	color:#fff;
 }
 .addCard{
 	text-decoration:none;
 	float: right;
 	font-size: 20px;
 	padding: 0px 6px;
-	background-color:#FFF;
+	background-color:#fff;
 }
 /*Row 5 - Notes*/
 #notes{
 	width: 821px;
 	height: 170px;
-	overflow-y: scroll;
+	overflow: hidden;
 }
-#notes h3{
-	display:inline;
-	padding: 5px;
-}
-#notesText{
-	background-color: white;
-	margin: 0px;
-	padding: 5px;
-}
+	#notes h3{
+		display:inline;
+		padding: 5px;
+		height:32px;
+	}
+	#notes p{
+		background-color: #fff;
+		margin: 0px;
+		padding: 5px;
+		height: 132px;
+		overflow-y: auto;
+		font-size: 13px;
+	}
