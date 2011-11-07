@@ -7,23 +7,38 @@ body{
 #header{
 	width: 100%;
 }
-#header h1{
-	position: relative;
-	top: 47px;
-	font-size: 40px;
-}
-#header nav{
+	#header h1{
+		position: relative;
+		top: 47px;
+		font-size: 40px;
+	}
+
+	#header nav{
+		float: right;
+	}
+	#header img#logo{
+		display:inline;
+	}
+	
+	
+	#header #cbText{
+		display:inline;
+		position: relative;
+		top: -15px;
+		font-size:40px;
+	}
+#menu
+{
 	float: right;
 }
-#logo{
-	display:inline;
-}
-#cbText{
-	display:inline;
-	position: relative;
-	top: -15px;
-	font-size:40px;
-}
+	#menu .navButton{
+		background-color: #AAA;
+		padding: 4px 8px;
+		text-decoration: none;
+		margin:0 2px;
+		color: #fff;
+		text-shadow: 0 0 4px #000;
+	}
 #content{
 	margin: 0 auto;
 	width: 860px;
@@ -85,17 +100,26 @@ body{
 #charDisc{
 	height: 215px;
 	width: 227px;
-	overflow: scroll;
+	overflow:hidden;
 }
 #charDisc h3{
 	padding-top:5px;
 	padding-left:5px;
 	margin:0;
+	height:30px;
 }
+<<<<<<< HEAD
 #charDiscTxt{
 	background-color: white;
+=======
+#charDisc p{
+>>>>>>> Styled text a little better
 	margin: 0px;
 	padding: 5px;
+	text-align: justify;
+	font-size: 12px;
+	height: 165px;
+	overflow-y: auto;
 }
 #stats{
 	height: 215px;
@@ -163,7 +187,7 @@ body{
 #notes{
 	width: 821px;
 	height: 170px;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 #notes h3{
 	display:inline;
