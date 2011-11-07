@@ -153,6 +153,8 @@ body{
 	height: 100%;
 	overflow: hidden;
 	text-align: center;
+	line-height: 68px;
+	font-size: 30px;
 }
 #pointsUP{
 	background-color: #fff;
