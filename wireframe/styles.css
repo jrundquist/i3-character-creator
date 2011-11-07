@@ -4,8 +4,27 @@ body{
 #header{
 	
 }
+#superMenu{
+	float: right;
+}
+#logo{
+	display:inline;
+}
+#cbText{
+	display:inline;
+	position: relative;
+	top: -15px;
+	font-size:40px;
+}
+#menu
+{
+	float: right;
+}
 .navButton{
-	
+	background-color: #AAA;
+	padding: 4px 8px;
+	text-decoration: none;
+	margin:0 2px;
 }
 #content{
 	margin: 0 auto;
@@ -26,7 +45,12 @@ body{
 	clear:both;
 }
 #charName{
-	
+	float: left;
+}
+#charName h2{
+	width: 250px;
+	padding:0;
+	margin:0;
 }
 #charInfo{
 	
@@ -45,7 +69,12 @@ body{
 #charDisc{
 	height: 215px;
 	width: 227px;
-	overflow:hidden;
+	overflow: scroll;
+}
+#charDisc h3{
+	padding-top:5px;
+	padding-left:5px;
+	margin:0;
 }
 #charDiscTxt{
 	margin: 0px;
@@ -73,4 +102,13 @@ body{
 #notes{
 	width: 821px;
 	height: 170px;
+	overflow: scroll;
+}
+#notes h3{
+	display:inline;
+	padding: 5px;
+}
+#notesText{
+	margin: 0px;
+	padding: 5px;
 }
