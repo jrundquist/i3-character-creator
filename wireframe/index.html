@@ -7,21 +7,35 @@
 	</head>
 	<body>
 		<section id='header'>
-			<img src='./untoldlogo.png'>
+			<nav id='superMenu'>
+				help | about | logout
+			</nav>
+			<div id='logo'>
+				<img src='./untoldlogo.png'>
+			</div>
+			<div id='cbText'>
+				character builder
+			</div>
 		</section>
 		<section id='content'>
 				<section class='row'>
 					<div id='charName'>
-						[Character Name]
+						<h2 contenteditable>[Character Name]</h2>
 					</div>
+				<nav id='menu'>
+					<a class='navButton' href=''>new</a>
+					<a class='navButton' href=''>load</a>
+					<a class='navButton' href=''>save</a>
+				</nav>
 				</section>
 				<section class='row'>
 					<section id='charInfo'>
 						<div id='cardImgHolder' class='border'>
 							<img id='cardImg' src='./card.jpg'>
 						</div>
-						<div contenteditable id='charDisc' class='border'>
-							<p id='charDiscTxt'>
+						<div id='charDisc' class='border'>
+							<h3>Character Bio</h3>
+							<p contenteditable id='charDiscTxt'>
 								Cupcake ipsum dolor sit amet I love. Liquorice soufflé muffin tootsie roll. Candy cheesecake I love gingerbread marzipan gingerbread topping bear claw I love. Muffin tiramisu carrot cake sweet roll gummies powder sweet cheesecake fruitcake. Cake caramels apple pie apple pie. I love dragée I love jelly-o I love I love. Muffin tiramisu I love liquorice toffee. Tootsie roll I love cheesecake chocolate chocolate jelly beans applicake I love lemon drops. I love wafer marzipan cotton candy chocolate bar wafer. Powder bonbon sesame snaps cotton candy oat cake chocolate cake. Marzipan fruitcake sweet roll marshmallow soufflé. Powder croissant bear claw I love sweet roll I love fruitcake cheesecake faworki.
 							</p>
 						</div>
@@ -37,12 +51,17 @@
 				</section>
 				<section class='row'>
 					<div class='deck border'>
+						<div class='deckTitle'>
+							Character Deck
+							<a href=''>+</a>
+						</div>
 					</div>
 					<div class='deck border' id='hotSwap'>
 					</div>
 				</section>
 				<section class='row'>
 					<div id='notes' class='border'>
+						<h3>Notes:</h3>
 						<p contenteditable id='notesText'>
 							Cupcake ipsum dolor sit amet. Brownie carrot cake biscuit croissant. Applicake applicake I love. Wafer carrot cake ice cream chocolate sweet. Halvah I love sweet. Marzipan icing I love faworki. Lemon drops chocolate dragée halvah tart cake pastry bear claw. Danish gummies cotton candy dessert lollipop. Cookie caramels pie bear claw pastry marshmallow jelly. Candy canes I love ice cream apple pie sweet roll fruitcake applicake chocolate cake.
 							Gingerbread I love ice cream pastry wafer brownie croissant jujubes I love. Toffee wafer dragée jelly-o chocolate cheesecake candy. Marshmallow soufflé wafer sesame snaps. Fruitcake I love I love carrot cake dessert cupcake chocolate. Bear claw cheesecake candy cheesecake candy canes I love. Cotton candy cheesecake carrot cake jelly beans soufflé. Jujubes gummies macaroon lemon drops. Halvah cupcake ice cream fruitcake. Carrot cake dragée biscuit soufflé cupcake jelly-o gummies jelly beans candy.
