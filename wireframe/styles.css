@@ -12,20 +12,11 @@ body{
 		top: 47px;
 		font-size: 40px;
 	}
-
 	#header nav{
 		float: right;
 	}
-	#header img#logo{
-		display:inline;
-	}
-	
-	
-	#header #cbText{
-		display:inline;
-		position: relative;
-		top: -15px;
-		font-size:40px;
+	#header img{
+		float: left;
 	}
 #menu
 {

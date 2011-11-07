@@ -6,48 +6,44 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>	</head>
 
 		<!-- Style sheets -->
-		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-		<link rel='stylesheet' type='text/css' href='./styles.css'>
-		<link rel='stylesheet' type='text/css' href='../styles/dialog.css'>
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel="stylesheet" type='text/css'>
+		<link rel="stylesheet" type='text/css' href='./styles.css'>
+		<link rel="stylesheet" type='text/css' href='../styles/dialog.css'>
 	</head>
 	<body>
-		<section id='header'>
-				<nav id="navigation">
+		<section id="header">
+			<nav id="navigation">
 				<a href="#about" onClick="openDialog('help');return false;">help</a> | 
 				<a href="#about" onClick="openDialog('about');return false;">about</a> | 
 				<a href="/user/logout">logout</a>
 			</nav>
-			<div id='logo'>
-				<img src='./untoldlogo.png'>
-			</div>
-			<div id='cbText'>
-				character builder
-			</div>
+			<img id="logo" src='./untoldlogo.png'/>
+			<h1>character builder</div>
 		</section>
-		<section id='content'>
-				<section class='row'>
+		<section id="content">
+				<section class="row">
 					<div id='charName'>
 						<h2 contenteditable>[Character Name]</h2>
 					</div>
-				<nav id='menu'>
+				<nav id="menu">
 					<a class='navButton' href='#' onClick="new()">new</a>
 					<a class='navButton' href='#' onClick="openDialog('/load')">load</a>
 					<a class='navButton' href='#' onClick="save()">save</a>
 				</nav>
 				</section>
-				<section class='row'>
+				<section class="row">
 					<section id='charInfo'>
-						<div id='cardImgHolder' class='border'>
+						<div id='cardImgHolder' class="border">
 							<img id='cardImg' src='./card.jpg'>
 						</div>
-						<div id='charDisc' class='border'>
+						<div id='charDisc' class="border">
 							<h3>Character Bio</h3>
 							<p contenteditable id='charDiscTxt'>
 								Cupcake ipsum dolor sit amet I love. Liquorice soufflé muffin tootsie roll. Candy cheesecake I love gingerbread marzipan gingerbread topping bear claw I love. Muffin tiramisu carrot cake sweet roll gummies powder sweet cheesecake fruitcake. Cake caramels apple pie apple pie. I love dragée I love jelly-o I love I love. Muffin tiramisu I love liquorice toffee. Tootsie roll I love cheesecake chocolate chocolate jelly beans applicake I love lemon drops. I love wafer marzipan cotton candy chocolate bar wafer. Powder bonbon sesame snaps cotton candy oat cake chocolate cake. Marzipan fruitcake sweet roll marshmallow soufflé. Powder croissant bear claw I love sweet roll I love fruitcake cheesecake faworki.
 							</p>
 						</div>
 					</section>
-					<div id='stats' class='border buffer'>
+					<div id="stats" class='border buffer'>
 						<table>
 							<tr>
 								<td> &nbsp;
@@ -108,14 +104,14 @@
 								<td>
 									<img class='statsIcon' src='VIT.png'/> Vitality
 								</td>
-								<td id='vitality' class='statNum'>
+								<td id="vitality" class='statNum'>
 									0
 								</td>
 							</tr>
 						</table>
 					</div>
 				</section>
-				<section class='row'>
+				<section class="row">
 					<div class='pointCount border'>
 						<div class='pointsLabel'>
 							<img class='pointsIcon' src='UP.png'/>
@@ -135,22 +131,22 @@
 						</div>
 					</div>
 				</section>
-				<section class='row'>
+				<section class="row">
 					<div class='deck border'>
 						<div class='deckTitle'>
 							Character Deck
-							<a class='addCard' id='addCardChar' href=''>+</a>
+							<a class='addCard' id='addCardChar' href='#'>+</a>
 						</div>
 					</div>
 					<div class='deck border buffer'>
 						<div class='deckTitle'>
 							Hot Swap Buffer
-							<a class='addCard' id='addCardSwap' href=''>+</a>
+							<a class='addCard' id='addCardSwap' href='#'>+</a>
 						</div>
 					</div>
 				</section>
-				<section class='row'>
-					<div id='notes' class='border'>
+				<section class="row">
+					<div id="notes" class="border">
 						<h3>Notes:</h3>
 						<p contenteditable id='notesText'>
 							Cupcake ipsum dolor sit amet. Brownie carrot cake biscuit croissant. Applicake applicake I love. Wafer carrot cake ice cream chocolate sweet. Halvah I love sweet. Marzipan icing I love faworki. Lemon drops chocolate dragée halvah tart cake pastry bear claw. Danish gummies cotton candy dessert lollipop. Cookie caramels pie bear claw pastry marshmallow jelly. Candy canes I love ice cream apple pie sweet roll fruitcake applicake chocolate cake.
@@ -159,7 +155,7 @@
 					</div>
 				</section>
 				<!-- Need a null row? -->
-				<section class='row'></section>
+				<section class="row"></section>
 		</section>
 		
 		
@@ -238,7 +234,7 @@
 						<a href="#">Courtney McCormick</a><br>
 						<br>
 						<strong>Writers</strong><br>
-						<a href="#">Christopher Trimble</a> &amp; <a href="mailto:">Vladimir Grantcharov</a><br>
+						<a href="#">Christopher Trimble</a> &amp; <a href="#">Vladimir Grantcharov</a><br>
 						<br>
 						<strong>Graphic Designer</strong><br>
 						<a href="#">William Grier</a><br>
