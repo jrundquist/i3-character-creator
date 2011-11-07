@@ -5,9 +5,6 @@ body{
 #header{
 	width: 100%;
 }
-#header img#logo{
-	float: left;
-}
 #header h1{
 	position: relative;
 	top: 47px;
@@ -15,9 +12,6 @@ body{
 }
 
 #header nav{
-	float: right;
-}
-#superMenu{
 	float: right;
 }
 #logo{
