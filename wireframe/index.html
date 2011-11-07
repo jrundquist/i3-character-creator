@@ -1,13 +1,29 @@
 <html>
 	<head>
-		<title></title>
-
-		<link rel='stylesheet' type='text/css' href='./styles.css'>
+		<title>Untold the Game | Character Builder</title>
 		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>	</head>
+
+		<!-- Style sheets -->
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link rel='stylesheet' type='text/css' href='./styles.css'>
+		<link rel='stylesheet' type='text/css' href='../styles/dialog.css'>
 	</head>
 	<body>
 		<section id='header'>
-			<img src='./untoldlogo.png'>
+			
+			<nav id="navigation">
+				<a href="#about" onClick="openDialog('help');return false;">help</a> | 
+				<a href="#about" onClick="openDialog('about');return false;">about</a> | 
+				<a href="/user/logout">logout</a>
+			</nav>
+			
+			<img id="logo" src='./untoldlogo.png' />
+			<h1>Character Builder</h1>
+			
+
+			
 		</section>
 		<section id='content'>
 				<section class='row'>
@@ -45,7 +61,93 @@
 					<div id='notes' class='border'>
 					</div>
 				</section>
-
+				<!-- Need a null row? -->
+				<section class='row'></section>
 		</section>
+		
+		
+		
+		<!--- Templates for alert dialogs go here -->
+		<!--- the ID of the script tag is how you reference the dialogs -->
+		<!--- Ex: openDialog('about') opens a dialog with the content of the id="_about" tag -->
+		<script type="text/template" id="_about">
+			<h1>
+				The I3 Character Builder Team
+			</h1>
+			<table>
+				<tbody>
+					<tr>
+						<th>
+							<font size="6"><u>Team 1</u></font>
+						</th>
+						<th>
+							<font size="6"><u>Team 2</u></font>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<center>
+								<strong>Project Manager</strong><br>
+								<a href="http://www.linkedin.com/in/aarongoldsmith" target="_blank">Aaron Goldsmith</a><br>
+								<br>
+								<strong>Managing Editor</strong><br>
+								<a href="mailto:kmasoor3@gatech.edu">Krishna Masoor</a><br>
+								<br>
+								<strong>Writer &amp; Programmer</strong><br>
+								<a href="http://www.enriquesantos.net/" target="_blank">Enrique Santos</a><br>
+								<br>
+								<strong>Graphic Designers</strong><br>
+								<a href="mailto:hkhokhar3@gatech.edu">Hassan Khokhar</a> &amp; <a href="http://www.linkedin.com/pub/elizabeth-lemar/32/a61/243" target="_blank">Elizabeth LeMar</a><br>
+								<br>
+								<strong>Programmers</strong><br>
+								<a href="http://www.linkedin.com/pub/robert-basilio/32/a63/792" target="_blank">Robert Basilio</a>, <a href="mailto:gchen7@gatech.edu">George Chen</a>,<br>
+								<a href="https://www.facebook.com/profile.php?id=1218266014" target="_blank">Sean Chiem</a> &amp; <a href="mailto:rloftin3@gatech.edu">Robert Loftin</a><br>
+							</center>
+							<table border="0">
+								<tbody>
+									<tr>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+						<td>
+							<center>
+								<strong>Project Manager</strong><br>
+								<a href="mailto:" target="_blank">Jason Molargik</a><br>
+								<br>
+								<strong>Managing Editor</strong><br>
+								<a href="mailto:">Courtney McCormick</a><br>
+								<br>
+								<strong>Writers</strong><br>
+								<a href="mailto:">Christopher Trimble</a> &amp; <a href="mailto:">Vladimir Grantcharov</a><br>
+								<br>
+								<strong>Graphic Designer</strong><br>
+								<a href="mailto:">William Grier</a><br>
+								<br>
+								<strong>Programmers</strong><br>
+								<a href="mailto:">Andrew Monroe</a>, <a href="mailto:">Irfan Somani</a>, &amp;<br>
+								<a href="mailto:=">Nigel Lawrence</a><br>
+							</center>
+							<table border="0"></table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</script>
+		
+		
+		<script type="text/template" id="_help">
+			<h1>Help</h1>
+			<p>Here we should write up something that would help the user. Maybe describe some stuff?</p>
+		</script>
+		
+		
+		
+		<!-- Javascript -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="../js/dialog.js"></script>
+		
+		
 	</body>
 </html>

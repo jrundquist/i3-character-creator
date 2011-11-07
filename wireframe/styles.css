@@ -1,8 +1,21 @@
 body{
-	font-family: helvetica, calibri, sans-serif ;
+	font-family: 'PT Sans', 'Myriad Pro', 'Helvetica', sans-serif;
+	margin: 10px 10px 30px;
 }
 #header{
-	
+	width: 100%;
+}
+#header img#logo{
+	float: left;
+}
+#header h1{
+	position: relative;
+	top: 47px;
+	font-size: 40px;
+}
+
+#header nav{
+	float: right;
 }
 .navButton{
 	
@@ -10,6 +23,11 @@ body{
 #content{
 	margin: 0 auto;
 	width: 860px;
+	clear:both;
+}
+.content:after{
+	content:"";
+	clear:both;
 }
 .border{
 	border-style:solid;
