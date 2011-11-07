@@ -47,23 +47,106 @@
 							</p>
 						</div>
 					</section>
-					<div id='stats' class='border'>
+					<div id='stats' class='border buffer'>
+						<table>
+							<tr>
+								<td> &nbsp;
+								</td>
+								<td>
+									<img class='statsIcon' src='ATK.png'/> Attack
+								</td>
+								<td>
+									<img class='statsIcon' src='DEF.png'/> Defense
+								</td>
+								<td>
+									<img class='statsIcon' src='BOOST.png'/> Boost
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img class='statsIcon' src='VIT.png'/> Body
+								</td>
+								<td id='atkBody' class='statNum'>
+									0
+								</td>
+								<td id='defBody' class='statNum'>
+									0
+								</td>
+								<td id='boostBody' class='statNum'>
+									0
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img class='statsIcon' src='VIT.png'/> Mind
+								</td>
+								<td id='atkMind' class='statNum'>
+									0
+								</td>
+								<td id='defMind' class='statNum'>
+									0
+								</td>
+								<td id='boostMind' class='statNum'>
+									0
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img class='statsIcon' src='VIT.png'/> Soul
+								</td>
+								<td id='atkSoul' class='statNum'>
+									0
+								</td>
+								<td id='defSoul' class='statNum'>
+									0
+								</td>
+								<td id='boostSoul' class='statNum'>
+									0
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<img class='statsIcon' src='VIT.png'/> Vitality
+								</td>
+								<td id='vitality' class='statNum'>
+									0
+								</td>
+							</tr>
+						</table>
 					</div>
 				</section>
 				<section class='row'>
 					<div class='pointCount border'>
+						<div class='pointsLabel'>
+							<img class='pointsIcon' src='UP.png'/>
+							total UP
+						</div>
+						<div contenteditable class='pointsVal' id='pointsUP'>
+							500
+						</div>
 					</div>
-					<div class='pointCount border' id='buffer' >
+					<div class='pointCount border buffer' >
+						<div class='pointsLabel'>
+							<img class='pointsIcon' src='UP.png'/>
+							swap buffer
+						</div>
+						<div class='pointsVal' id='pointsSB'>
+							500
+						</div>
 					</div>
 				</section>
 				<section class='row'>
 					<div class='deck border'>
 						<div class='deckTitle'>
 							Character Deck
-							<a href=''>+</a>
+							<a class='addCard' id='addCardChar' href=''>+</a>
 						</div>
 					</div>
-					<div class='deck border' id='hotSwap'>
+					<div class='deck border buffer'>
+						<div class='deckTitle'>
+							Hot Swap Buffer
+							<a class='addCard' id='addCardSwap' href=''>+</a>
+						</div>
 					</div>
 				</section>
 				<section class='row'>

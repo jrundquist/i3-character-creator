@@ -2,6 +2,8 @@ body{
 	font-family: 'PT Sans', 'Myriad Pro', 'Helvetica', sans-serif;
 	margin: 10px 10px 30px;
 }
+
+/*Header Stuff*/
 #header{
 	width: 100%;
 }
@@ -10,7 +12,6 @@ body{
 	top: 47px;
 	font-size: 40px;
 }
-
 #header nav{
 	float: right;
 }
@@ -22,16 +23,6 @@ body{
 	position: relative;
 	top: -15px;
 	font-size:40px;
-}
-#menu
-{
-	float: right;
-}
-.navButton{
-	background-color: #AAA;
-	padding: 4px 8px;
-	text-decoration: none;
-	margin:0 2px;
 }
 #content{
 	margin: 0 auto;
@@ -56,6 +47,8 @@ body{
 	content:"";
 	clear:both;
 }
+
+/*Row 1 - Char Name/Menu */
 #charName{
 	float: left;
 }
@@ -64,6 +57,17 @@ body{
 	padding:0;
 	margin:0;
 }
+#menu
+{
+	float: right;
+}
+.navButton{
+	background-color: #AAA;
+	padding: 4px 8px;
+	text-decoration: none;
+	margin:0 2px;
+}
+/*Row 2 - Char Info/Stats */
 #charInfo{
 	
 }
@@ -89,6 +93,7 @@ body{
 	margin:0;
 }
 #charDiscTxt{
+	background-color: white;
 	margin: 0px;
 	padding: 5px;
 }
@@ -97,13 +102,43 @@ body{
 	width: 400px;
 	margin-left:10px;
 }
+.statsIcon{
+	height: 35px;
+}
+.statNum{
+	text-align:center;
+}
+.buffer{
+	margin-left:10px;
+}
+
+/*Row 3 - Points*/
 .pointCount{
 	width: 400px;
 	height: 65px;
 }
-#buffer{
-	margin-left:10px;
+.pointsIcon{
+	width:50px;
 }
+.pointsLabel{
+	float:left;
+	width: 199px;
+	height: 100%;
+	border-right: solid 2px;
+}
+.pointsVal{
+	float: left;
+	width: 199px;
+	height: 100%;
+	overflow: hidden;
+	text-align: center;
+}
+#pointsUP{
+	background-color: white;
+}
+#pointsSB{
+}
+/*Row 4 - Decks*/
 .deck{
 	width: 400px;
 	height: 370px;
@@ -111,6 +146,20 @@ body{
 #hotSwap{
 	margin-left:10px;
 }
+.deckTitle{
+	height: 20px;
+	padding:5px;
+	background-color:#000;
+	color:#FFF;
+}
+.addCard{
+	text-decoration:none;
+	float: right;
+	font-size: 20px;
+	padding: 0px 6px;
+	background-color:#FFF;
+}
+/*Row 5 - Notes*/
 #notes{
 	width: 821px;
 	height: 170px;
@@ -121,6 +170,7 @@ body{
 	padding: 5px;
 }
 #notesText{
+	background-color: white;
 	margin: 0px;
 	padding: 5px;
 }
