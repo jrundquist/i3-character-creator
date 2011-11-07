@@ -108,12 +108,9 @@ body{
 	margin:0;
 	height:30px;
 }
-<<<<<<< HEAD
-#charDiscTxt{
-	background-color: white;
-=======
+
 #charDisc p{
->>>>>>> Styled text a little better
+	background-color: white;
 	margin: 0px;
 	padding: 5px;
 	text-align: justify;
