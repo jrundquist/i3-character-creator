@@ -58,9 +58,9 @@ if (!isset($userid)){
 		</div>
 		
 		<script>
-		<?php if (strlen($the_real_userid)>0):?>
+		<?php if (strlen($the_real_userid)>0): ?>
 			document.getElementById("logout").style.display = "";
-		<?php else; ?>
+		<?php else: ?>
 			document.getElementById("login").style.display = "";
 		<?php endif;?>
 		</script>
@@ -230,5 +230,9 @@ if (!isset($userid)){
 		<div id="overlaydiv">
 			<img id="overlay" src="components/helpOverlay.png" name="overlay">
 		</div>
+		
+		
+
+		
 	</body>
 </html>
