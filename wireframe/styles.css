@@ -64,10 +64,13 @@ body{
 }
 	#charName h2{
 		width: 420px;
+		height: 30px;
+		overflow: hidden;
 		padding:0;
 		margin:0;
 	}
 	#charName h2:after{
+		display: inline;
 		font-family: "IconicStroke";
 		content: "               p";	
 	}
@@ -128,6 +131,10 @@ body{
 		font-size: 12px;
 		height: 165px;
 		overflow-y: auto;
+	}
+	#charDisc p:after{
+		font-family: "IconicStroke";
+		content: "               p";	
 	}
 #stats{
 	height: 215px;
@@ -225,6 +232,46 @@ body{
 		background-color:#fff;
 		height: 22px;
 	}
+	.deckCard{
+		width: 401px;
+		position: relative;
+		border-left: 15px solid red;
+		margin: 5px 0 10px 0;
+}
+	.cardColor{
+		width: 19px;
+	
+		display: none;
+		height: 25px;
+		margin: 5px 0;
+}
+	.red{
+		border-color: #F00;
+	}
+	.blue{
+		border-color: #3fa9f5;
+	}
+	.yellow{
+		border-color: #fcee21;
+	}
+	.cardCost{
+		display: block;
+		padding: 0px 8px;
+		font-size: 26px;
+		border-right: #888 solid 2px;
+	
+		width: 40px;
+		position: absolute;
+		text-align: center;
+}
+	.cardName{
+		display: block;
+		padding: 0px 8px;
+		font-size: 26px;
+	
+		position: relative;
+		left: 70px;
+}
 	
 
 /******************************
@@ -249,4 +296,8 @@ body{
 		height: 132px;
 		overflow-y: auto;
 		font-size: 13px;
+	}
+	#notes p:after{
+		font-family: "IconicStroke";
+		content: "               p";	
 	}
