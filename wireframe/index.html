@@ -18,7 +18,7 @@
 				<a href="#about" onClick="openDialog('about');return false;">about</a> | 
 				<a href="/user/logout">logout</a>
 			</nav>
-			<img id="logo" src="images/untoldlogo.png"/>
+			<img id="logo" src="images/logo.png"/>
 			<h1>character builder</div>
 		</section>
 		<section id="content">
@@ -221,6 +221,8 @@
 				</section>
 		</section>
 		
+		<!-- Overlay for when dragging a card -->
+		<div id="trash-overlay"><div id="trash-icon" class="iconic trash"></div></div>
 		
 		
 		<!--- Templates for alert dialogs go here -->
@@ -335,6 +337,15 @@
 				connectWith: ".deckContent"
 			}).disableSelection();
 		});
+		});
+		
+		function showTrash(){
+			$('#trash-overlay').hide().fadeIn('fast');
+		}
+		function hideTrash(){
+			$('#trash-overlay').fadeOut('fast');
+		}
+		
 		</script>
 		
 	</body>
