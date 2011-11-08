@@ -18,18 +18,7 @@ body{
 	#header img{
 		float: left;
 	}
-#menu
-{
-	float: right;
-}
-	#menu .navButton{
-		background-color: #AAA;
-		padding: 4px 8px;
-		text-decoration: none;
-		margin:0 2px;
-		color: #fff;
-		text-shadow: 0 0 4px #000;
-	}
+
 #content{
 	margin: 0 auto;
 	width: 860px;
@@ -42,11 +31,11 @@ body{
 .border{
 	border-style:solid;
 	border-width:2px;
-	margin: 5px;
-	float: left;
 	background-color: #DDD;
 }
 .row{
+	width: 860px;
+	margin-bottom: 15px;
 	clear: both;
 }
 .row:after{
@@ -54,26 +43,40 @@ body{
 	clear:both;
 }
 
-/*Row 1 - Char Name/Menu */
+/******************************
+ * Row 1 
+ * 
+ * - Character name 
+ * - Menu
+******************************/
 #charName{
 	float: left;
 }
-#charName h2{
-	width: 250px;
-	padding:0;
-	margin:0;
+	#charName h2{
+		width: 250px;
+		padding:0;
+		margin:0;
+	}
+#menu{
+	width: 420px;
+	margin-left: 440px;
+	text-align: right;
 }
-#menu
-{
-	float: right;
-}
-.navButton{
-	background-color: #AAA;
-	padding: 4px 8px;
-	text-decoration: none;
-	margin:0 2px;
-}
-/*Row 2 - Char Info/Stats */
+	#menu .navButton{
+		background-color: #AAA;
+		padding: 4px 8px;
+		text-decoration: none;
+		margin:0 2px;
+		color: #fff;
+		text-shadow: 0 0 4px #000;
+	}
+
+/******************************
+ * Row 2
+ * 
+ * - Character Information
+******************************/
+
 #charInfo{
 	
 }
@@ -81,101 +84,129 @@ body{
 	height: 215px;
 	width: 157px;
 	overflow: hidden;
+	float: left;
 }
-#cardImg{
-	position: relative;
-	left: -18px;
-	top: -20px;
-	height: 255px;
-}
+	#cardImg{
+		position: relative;
+		left: -18px;
+		top: -20px;
+		height: 255px;
+	}
 #charDisc{
 	height: 215px;
-	width: 227px;
+	width: 245px;
 	overflow:hidden;
-}
-#charDisc h3{
-	padding-top:5px;
-	padding-left:5px;
-	margin:0;
-	height:30px;
-}
-
-#charDisc p{
-	background-color: #fff;
-	margin: 0px;
-	padding: 5px;
-	text-align: justify;
-	font-size: 12px;
-	height: 165px;
-	overflow-y: auto;
-}
-#stats{
-	height: 215px;
-	width: 400px;
-	margin-left:10px;
-}
-.statsIcon{
-	height: 35px;
-}
-.statNum{
-	text-align:center;
-}
-.buffer{
-	margin-left:10px;
-}
-
-/*Row 3 - Points*/
-.pointCount{
-	width: 400px;
-	height: 65px;
-}
-.pointsIcon{
-	width:50px;
-}
-.pointsLabel{
-	float:left;
-	width: 199px;
-	height: 100%;
-	border-right: solid 2px;
-}
-.pointsVal{
 	float: left;
-	width: 199px;
-	height: 100%;
-	overflow: hidden;
-	text-align: center;
-	line-height: 68px;
-	font-size: 30px;
+	margin-left: 10px;
 }
-#pointsUP{
-	background-color: #fff;
+	#charDisc h3{
+		padding-top:5px;
+		padding-left:5px;
+		margin:0;
+		height:30px;
+	}
+
+	#charDisc p{
+		background-color: #fff;
+		margin: 0px;
+		padding: 5px;
+		text-align: justify;
+		font-size: 12px;
+		height: 165px;
+		overflow-y: auto;
+	}
+	#stats{
+		height: 215px;
+		width: 416px;
+		margin-left: 440px;
+	}
+	.statsIcon{
+		height: 35px;
+	}
+	.statNum{
+		text-align:center;
+	}
+	
+
+
+/******************************
+ * Row 3 
+ * 
+ * - Points
+******************************/
+
+.pointCount{
+	width: 416px;
+	height: 65px;
+	float: left;
 }
-#pointsSB{
-}
-/*Row 4 - Decks*/
+	.pointCount#buffer-points{
+		float: none;
+		margin-left: 440px;
+	}
+	.pointsIcon{
+		width:50px;
+	}
+	.pointsLabel{
+		float:left;
+		width: 199px;
+		height: 100%;
+		border-right: solid 2px;
+	}
+	.pointsVal{
+		float: left;
+		width: 199px;
+		height: 100%;
+		overflow: hidden;
+		text-align: center;
+		line-height: 68px;
+		font-size: 30px;
+	}
+	#pointsUP{
+		background-color: #fff;
+	}
+	#pointsSB{
+	}
+	
+
+/******************************
+ * Row 4 
+ * 
+ * - Decks
+******************************/
 .deck{
-	width: 400px;
+	width: 416px;
 	height: 370px;
 }
-#hotSwap{
-	margin-left:10px;
+#character-deck{
+	float:left;
 }
-.deckTitle{
-	height: 20px;
-	padding:5px;
-	background-color:#000;
-	color:#fff;
+#hot-swap-deck{
+	margin-left:440px;
 }
-.addCard{
-	text-decoration:none;
-	float: right;
-	font-size: 20px;
-	padding: 0px 6px;
-	background-color:#fff;
-}
-/*Row 5 - Notes*/
+	.deckTitle{
+		height: 20px;
+		padding:5px;
+		background-color:#000;
+		color:#fff;
+	}
+	.addCard{
+		text-decoration:none;
+		float: right;
+		font-size: 20px;
+		padding: 0px 6px;
+		background-color:#fff;
+		height: 22px;
+	}
+	
+
+/******************************
+ * Row 5 
+ * 
+ * - Notes
+******************************/
 #notes{
-	width: 821px;
+	width: 856px;
 	height: 170px;
 	overflow: hidden;
 }
