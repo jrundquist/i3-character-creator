@@ -327,7 +327,7 @@
 		<script src="../js/dialog.js"></script>
 		
 		<script>
-		$(document).delegate("#charName h2","keydown",function(){
+		$(document).delegate("#charName h2, #pointsUP","keydown",function(){
 			if (event.keyCode == 13 || ($("#charName h2").html().length > 35 && event.keyCode != 8 && event.keyCode != 46) ){
 				return false;
 			}
