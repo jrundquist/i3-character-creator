@@ -334,9 +334,14 @@
 		});
 		$(function(){
 			$("#swapDeckContent, #charDeckContent").sortable({
-				connectWith: ".deckContent"
+				connectWith: ".deckContent",
+				start: function(event,ui){
+					showTrash();
+				},
+				stop: function(event,ui){
+					hideTrash();
+				},
 			}).disableSelection();
-		});
 		});
 		
 		function showTrash(){
