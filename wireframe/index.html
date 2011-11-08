@@ -292,6 +292,7 @@
 		
 		<!-- Javascript -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
 		<script src="../js/dialog.js"></script>
 		
 		<script>
@@ -299,6 +300,23 @@
 			if (event.keyCode == 13 || ($("#charName h2").html().length > 35 && event.keyCode != 8 && event.keyCode != 46) ){
 				return false;
 			}
+		});
+		$(function(){
+			$(".deckCard").draggable({
+				revert: true
+			})
+			$(".deckContent").droppable({
+				drop: function(event,ui){
+					$(this).append(ui.draggable)
+				}
+			}).sortable({
+				appendTo: '.deckContent',
+				scroll: true,
+				items: '.deckCard',
+				helper: 'original',
+				tolerance:'intersect',
+				cursor:'move'
+			});
 		});
 		</script>
 		
