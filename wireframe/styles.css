@@ -212,11 +212,13 @@ body{
  * 
  * - Decks
 ******************************/
+.row#decks{
+	z-index: 60;
+}
 .deck{
 	width: 416px;
 	height: 370px;
 	position:relative;
-	z-index: 2000;
 }
 #character-deck{
 	float:left;
@@ -229,17 +231,23 @@ body{
 		padding:5px;
 		background-color:#000;
 		color:#fff;
+		font-weight: bold;
 	}
 	.addCard{
-		text-decoration:none;
 		float: right;
 		font-size: 20px;
-		padding: 0px 6px;
-		background-color:#fff;
-		height: 22px;
+		font-family: 'PT Sans', 'Myriad Pro';
+		line-height: 22px;
+		background-color: #fff;
+		border: none;
+		height: 20px;
+		margin: 0;
+		padding: 0px 7px;
+		
 	}
 	.deckContent{
 		height: 100%;
+		z-index: 100;
 	}
 .deckCard{
 		width: 401px;
@@ -248,15 +256,7 @@ body{
 		border-left: 15px solid red;
 		margin: 5px 0 10px 0;
 		cursor: pointer;
-		z-index: 1950;
 	}
-		.cardColor{
-			width: 19px;
-	
-			display: none;
-			height: 25px;
-			margin: 5px 0;
-		}
 		.red{
 			border-color: #F00;
 		}
@@ -292,7 +292,6 @@ body{
 	height: 100%;
 	background: #000;
 	display: none;
-	z-index:1900;
 	opacity: 0.8;
 }
 #trash-overlay #trash-icon{
@@ -300,7 +299,7 @@ body{
 	width: 134px;
 	text-align: center;
 	font-size: 200px;
-	margin: 190px auto;
+	margin: 50px auto;
 }
 
 /******************************

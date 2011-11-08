@@ -132,16 +132,20 @@
 						</div>
 					</div>
 				</section>
-				<section class="row">
+				
+				<!-- Overlay for when dragging a card -->
+				<div id="trash-overlay"><div id="trash-icon" class="iconic trash"></div></div>
+				
+				
+				<section class="row" id="decks">
 					<div class="deck border" id="character-deck">
 						<div class="deckTitle">
 							Character Deck
-							<button class="addCard" id="add-character-card"><span class="iconic plus"></span></button>
+							<button class="addCard" id="add-character-card">+</button>
 						</div>
 						<div class="deckContent" id="charDeckContent">
+							<!-- Will be added dynamically -->
 							<div class="deckCard red">
-								<div class="cardColor">
-								</div>
 								<div class="cardCost">
 									3
 								</div>
@@ -150,8 +154,6 @@
 								</div>
 							</div>
 							<div class="deckCard yellow">
-								<div class="cardColor">
-								</div>
 								<div class="cardCost">
 									2
 								</div>
@@ -160,8 +162,6 @@
 								</div>
 							</div>
 							<div class="deckCard blue">
-								<div class="cardColor blue">
-								</div>
 								<div class="cardCost">
 									12
 								</div>
@@ -169,17 +169,18 @@
 									Mind Lash
 								</div>
 							</div>
+							<!-- END Dynamic additions -->
+							
 						</div>
 					</div>
 					<div class="deck border" id="hot-swap-deck">
 						<div class="deckTitle">
 							Hot Swap Buffer
-							<button class="addCard" id="add-hot-swap-card"><span class="iconic plus"></span></button>
+							<button class="addCard" id="add-hot-swap-card">+</button>
 						</div>
 						<div class="deckContent" id="swapDeckContent">
+							<!-- Will be added dynamically -->	
 							<div class="deckCard red">
-								<div class="cardColor">
-								</div>
 								<div class="cardCost">
 									5
 								</div>
@@ -188,8 +189,6 @@
 								</div>
 							</div>
 							<div class="deckCard yellow">
-								<div class="cardColor">
-								</div>
 								<div class="cardCost">
 									2
 								</div>
@@ -198,8 +197,6 @@
 								</div>
 							</div>
 							<div class="deckCard blue">
-								<div class="cardColor blue">
-								</div>
 								<div class="cardCost">
 									8
 								</div>
@@ -207,6 +204,8 @@
 									Mind Probe
 								</div>
 							</div>
+							<!-- END Dynamic additions -->
+							
 						</div>
 					</div>
 				</section>
@@ -221,9 +220,7 @@
 				</section>
 		</section>
 		
-		<!-- Overlay for when dragging a card -->
-		<div id="trash-overlay"><div id="trash-icon" class="iconic trash"></div></div>
-		
+
 		
 		<!--- Templates for alert dialogs go here -->
 		<!--- the ID of the script tag is how you reference the dialogs -->
@@ -332,6 +329,7 @@
 				return false;
 			}
 		});
+		
 		$(function(){
 			$("#swapDeckContent, #charDeckContent").sortable({
 				connectWith: ".deckContent",
@@ -341,6 +339,8 @@
 				stop: function(event,ui){
 					hideTrash();
 				},
+				cursor: 'move',
+				zIndex: 5000
 			}).disableSelection();
 		});
 		
