@@ -134,7 +134,9 @@
 				</section>
 				
 				<!-- Overlay for when dragging a card -->
-				<div id="trash-overlay"><div id="trash-icon" class="iconic trash"></div></div>
+				<div id="trash-overlay" class="deckContent">
+					<div class="iconic trash" id="trash-icon"></div>
+				</div>
 				
 				
 				<section class="row" id="decks">
@@ -220,7 +222,12 @@
 				</section>
 		</section>
 		
-
+		<script type="text/template" id="_testing">
+		<h1>Hi!</h1>
+		<div id="dialog-footer">
+		<button>un-close</button>
+		</div>
+		</script>
 		
 		<!--- Templates for alert dialogs go here -->
 		<!--- the ID of the script tag is how you reference the dialogs -->
@@ -331,7 +338,7 @@
 		});
 		
 		$(function(){
-			$("#swapDeckContent, #charDeckContent").sortable({
+			$(".deckContent").sortable({
 				connectWith: ".deckContent",
 				start: function(event,ui){
 					showTrash();

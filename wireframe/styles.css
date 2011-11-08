@@ -247,9 +247,8 @@ body{
 	}
 	.deckContent{
 		height: 100%;
-		z-index: 100;
 	}
-.deckCard{
+	.deckCard{
 		width: 401px;
 		position: relative;
 		background: #f2f2f2;
@@ -299,7 +298,11 @@ body{
 	width: 134px;
 	text-align: center;
 	font-size: 200px;
+	font-weight:bold;
 	margin: 50px auto;
+}
+#trash-overlay .deckCard{
+	display: none;
 }
 
 /******************************
