@@ -199,6 +199,10 @@ body{
 	#pointsUP{
 		background-color: #fff;
 	}
+	#pointsUP:after{
+		font-family: "IconicStroke";
+		content: "               p";	
+	}
 	#pointsSB{
 	}
 	
@@ -211,6 +215,8 @@ body{
 .deck{
 	width: 416px;
 	height: 370px;
+	position:relative;
+	z-index: 2000;
 }
 #character-deck{
 	float:left;
@@ -272,7 +278,24 @@ body{
 		position: relative;
 		left: 70px;
 }
-	
+#trash-overlay{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	display: none;
+	z-index:1900;
+	opacity: 0.8;
+}
+#trash-overlay #trash-icon{
+	color: #CCC;
+	width: 134px;
+	text-align: center;
+	font-size: 200px;
+	margin: 190px auto;
+}
 
 /******************************
  * Row 5 

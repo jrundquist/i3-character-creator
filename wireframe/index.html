@@ -21,6 +21,9 @@
 			<img id="logo" src="images/untoldlogo.png"/>
 			<h1>character builder</div>
 		</section>
+		
+		<div id="trash-overlay"><div id="trash-icon" class="iconic box"></div></div>
+		
 		<section id="content">
 				<section class="row">
 					<div id="charName">
@@ -194,6 +197,7 @@
 		
 		
 		
+		
 		<!--- Templates for alert dialogs go here -->
 		<!--- the ID of the script tag is how you reference the dialogs -->
 		<!--- Ex: openDialog('about') opens a dialog with the content of the id="_about" tag -->
@@ -318,6 +322,14 @@
 				cursor:'move'
 			});
 		});
+		
+		function showTrash(){
+			$('#trash-overlay').hide().fadeIn('fast');
+		}
+		function hideTrash(){
+			$('#trash-overlay').fadeOut('fast');
+		}
+		
 		</script>
 		
 	</body>
