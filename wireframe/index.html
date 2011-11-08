@@ -35,7 +35,7 @@
 				<section class="row">
 					<section id="charInfo">
 						<div id="cardImgHolder" class="border">
-							<img id="cardImg" src="images/card.jpg">
+							<img class="card" id="cardImg" src="images/card.jpg">
 						</div>
 						<div id="charDisc" class="border">
 							<h3>Character Bio</h3>
@@ -315,6 +315,12 @@
 			<h1>Help</h1>
 			<p>Here we should write up something that would help the user. Maybe describe some stuff?</p>
 		</script>
+
+		<script type="text/template" id="_cardView">
+			<h1>Card Name</h1>
+			<img class="bigImg" src="images/card.jpg"/>
+			<img class="bigImg" src="images/card.jpg"/>
+		</script>
 		
 		
 		
@@ -329,6 +335,10 @@
 				return false;
 			}
 		});
+
+		$(document).delegate(".card","dblclick",function(){
+			openDialog('cardView');return false;
+		})
 		
 		$(function(){
 			$("#swapDeckContent, #charDeckContent").sortable({
