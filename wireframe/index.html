@@ -22,7 +22,6 @@
 			<h1>character builder</div>
 		</section>
 		
-		<div id="trash-overlay"><div id="trash-icon" class="iconic box"></div></div>
 		
 		<section id="content">
 				<section class="row">
@@ -195,7 +194,8 @@
 				</section>
 		</section>
 		
-		
+		<!-- Overlay for when dragging a card -->
+		<div id="trash-overlay"><div id="trash-icon" class="iconic trash"></div></div>
 		
 		
 		<!--- Templates for alert dialogs go here -->
@@ -307,7 +307,14 @@
 		});
 		$(function(){
 			$(".deckCard").draggable({
-				revert: true
+				revert: true,
+				start: function (event, ui){
+					showTrash();
+				},
+				stop: function (event, ui){
+					hideTrash();
+				}
+					
 			})
 			$(".deckContent").droppable({
 				drop: function(event,ui){
