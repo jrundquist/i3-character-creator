@@ -53,9 +53,13 @@ body{
 	float: left;
 }
 	#charName h2{
-		width: 250px;
+		width: 420px;
 		padding:0;
 		margin:0;
+	}
+	#charName h2:after{
+		font-family: "IconicStroke";
+		content: "               p";	
 	}
 #menu{
 	width: 420px;

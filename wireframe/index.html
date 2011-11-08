@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>	</head>
 
 		<!-- Style sheets -->
+		<link rel="stylesheet" type="text/css" href="../styles/iconic.css">
 		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel="stylesheet" type="text/css">
 		<link rel="stylesheet" type="text/css" href="./styles.css">
 		<link rel="stylesheet" type="text/css" href="../styles/dialog.css">
@@ -17,7 +18,7 @@
 				<a href="#about" onClick="openDialog('about');return false;">about</a> | 
 				<a href="/user/logout">logout</a>
 			</nav>
-			<img id="logo" src="./untoldlogo.png"/>
+			<img id="logo" src="images/untoldlogo.png"/>
 			<h1>character builder</div>
 		</section>
 		<section id="content">
@@ -34,7 +35,7 @@
 				<section class="row">
 					<section id="charInfo">
 						<div id="cardImgHolder" class="border">
-							<img id="cardImg" src="./card.jpg">
+							<img id="cardImg" src="images/card.jpg">
 						</div>
 						<div id="charDisc" class="border">
 							<h3>Character Bio</h3>
@@ -49,18 +50,18 @@
 								<td> &nbsp;
 								</td>
 								<td>
-									<img class="statsIcon" src="ATK.png"/> Attack
+									<img class="statsIcon" src="images/ATK.png"/> Attack
 								</td>
 								<td>
-									<img class="statsIcon" src="DEF.png"/> Defense
+									<img class="statsIcon" src="images/DEF.png"/> Defense
 								</td>
 								<td>
-									<img class="statsIcon" src="BOOST.png"/> Boost
+									<img class="statsIcon" src="images/BOOST.png"/> Boost
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<img class="statsIcon" src="VIT.png"/> Body
+									<img class="statsIcon" src="images/VIT.png"/> Body
 								</td>
 								<td id="atkBody" class="statNum">
 									0
@@ -74,7 +75,7 @@
 							</tr>
 							<tr>
 								<td>
-									<img class="statsIcon" src="VIT.png"/> Mind
+									<img class="statsIcon" src="images/VIT.png"/> Mind
 								</td>
 								<td id="atkMind" class="statNum">
 									0
@@ -88,7 +89,7 @@
 							</tr>
 							<tr>
 								<td>
-									<img class="statsIcon" src="VIT.png"/> Soul
+									<img class="statsIcon" src="images/VIT.png"/> Soul
 								</td>
 								<td id="atkSoul" class="statNum">
 									0
@@ -102,7 +103,7 @@
 							</tr>
 							<tr>
 								<td>
-									<img class="statsIcon" src="VIT.png"/> Vitality
+									<img class="statsIcon" src="images/VIT.png"/> Vitality
 								</td>
 								<td id="vitality" class="statNum">
 									0
@@ -114,7 +115,7 @@
 				<section class="row">
 					<div class="pointCount border">
 						<div class="pointsLabel">
-							<img class="pointsIcon" src="UP.png"/>
+							<img class="pointsIcon" src="images/UP.png"/>
 							total UP
 						</div>
 						<div contenteditable class="pointsVal" id="pointsUP">
@@ -123,7 +124,7 @@
 					</div>
 					<div class="pointCount border" id="buffer-points">
 						<div class="pointsLabel">
-							<img class="pointsIcon" src="UP.png"/>
+							<img class="pointsIcon" src="images/UP.png"/>
 							swap buffer
 						</div>
 						<div class="pointsVal" id="pointsSB">
@@ -135,13 +136,13 @@
 					<div class="deck border" id="character-deck">
 						<div class="deckTitle">
 							Character Deck
-							<a class="addCard" id="addCardChar" href='#'>+</a>
+							<button class="addCard" id="add-character-card"><span class="iconic plus"></span></button>
 						</div>
 					</div>
 					<div class="deck border" id="hot-swap-deck">
 						<div class="deckTitle">
 							Hot Swap Buffer
-							<a class="addCard" id="addCardSwap" href='#'>+</a>
+							<button class="addCard" id="add-hot-swap-card"><span class="iconic plus"></span></button>
 						</div>
 					</div>
 				</section>
@@ -258,6 +259,15 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 		<script src="../js/dialog.js"></script>
 		
+		<script>
+		$(document).delegate("#charName h2","keydown",function(){
+			if (event.keyCode == 13){
+				return false;
+			}else if ($("#charName h2").html().length > 35 && event.keyCode != 8 && event.keyCode != 46 ){
+					return false;
+			}
+		});
+		</script>
 		
 	</body>
 </html>
