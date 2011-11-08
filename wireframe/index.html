@@ -177,7 +177,36 @@
 							<button class="addCard" id="add-hot-swap-card"><span class="iconic plus"></span></button>
 						</div>
 						<div class="deckContent" id="swapDeckContent">
-							
+							<div class="deckCard red">
+								<div class="cardColor">
+								</div>
+								<div class="cardCost">
+									5
+								</div>
+								<div class="cardName">
+									I'na Twilight
+								</div>
+							</div>
+							<div class="deckCard yellow">
+								<div class="cardColor">
+								</div>
+								<div class="cardCost">
+									2
+								</div>
+								<div class="cardName">
+									Mind 1
+								</div>
+							</div>
+							<div class="deckCard blue">
+								<div class="cardColor blue">
+								</div>
+								<div class="cardCost">
+									8
+								</div>
+								<div class="cardName">
+									Mind Probe
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>
@@ -302,21 +331,9 @@
 			}
 		});
 		$(function(){
-			$(".deckCard").draggable({
-				revert: true
-			})
-			$(".deckContent").droppable({
-				drop: function(event,ui){
-					$(this).append(ui.draggable)
-				}
-			}).sortable({
-				appendTo: '.deckContent',
-				scroll: true,
-				items: '.deckCard',
-				helper: 'original',
-				tolerance:'intersect',
-				cursor:'move'
-			});
+			$("#swapDeckContent, #charDeckContent").sortable({
+				connectWith: ".deckContent"
+			}).disableSelection();
 		});
 		</script>
 		

@@ -232,7 +232,10 @@ body{
 		background-color:#fff;
 		height: 22px;
 	}
-	.deckCard{
+	.deckContent{
+		height: 100%;
+	}
+.deckCard{
 		width: 401px;
 		position: relative;
 		border-left: 15px solid red;
