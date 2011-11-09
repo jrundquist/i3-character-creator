@@ -14,7 +14,7 @@
 	<body>
 		<section id="header">
 			<nav id="navigation">
-				<a href="#about" onClick="openDialog('help');return false;">help</a> | 
+				<a href="#help" onClick="openDialog('help');return false;">help</a> | 
 				<a href="#about" onClick="openDialog('about');return false;">about</a> | 
 				<a href="/user/logout">logout</a>
 			</nav>
@@ -27,7 +27,7 @@
 						<h2 contenteditable>[Character Name]</h2>
 					</div>
 				<nav id="menu">
-					<a class="navButton" href='#' onClick="new()">new</a>
+					<a class="navButton" href='#' onClick="newChar()">new</a>
 					<a class="navButton" href='#' onClick="openDialog('/load')">load</a>
 					<a class="navButton" href='#' onClick="save()">save</a>
 				</nav>
@@ -322,6 +322,11 @@
 			<h1>Help</h1>
 			<p>Here we should write up something that would help the user. Maybe describe some stuff?</p>
 		</script>
+
+		<script type="text/template" id="_save">
+			<h1>Character Saved</h1>
+			<p>Here we should write up something that would help the user. Maybe describe some stuff?</p>
+		</script>
 		
 		<!-- Javascript -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -362,6 +367,14 @@
 		
 		function viewCard(cardId){
 			openDialog('ajax/card.php?id='+cardId, 'wide');
+		}
+
+		function save(){
+			openDialog('save');
+		}
+
+		function newChar(){
+			alert("New Stuff is happening!");
 		}
 			
 		</script>
