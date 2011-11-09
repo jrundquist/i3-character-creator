@@ -27,6 +27,9 @@ function newChar(){
 	alert("New Stuff is happening!");
 }
 
+function addCard(deck){
+	alert(deck);
+}
 
 
 /*************************
