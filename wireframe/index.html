@@ -322,14 +322,6 @@
 			<h1>Help</h1>
 			<p>Here we should write up something that would help the user. Maybe describe some stuff?</p>
 		</script>
-
-		<script type="text/template" id="_cardView">
-			<h1>$cardName</h1>
-			<img id="front-card" class="bigImg" src="$backImage"/>
-			<img id="back-card"  class="bigImg" src="$frontImage"/>
-		</script>
-		
-		
 		
 		<!-- Javascript -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -369,26 +361,7 @@
 		}
 		
 		function viewCard(cardId){
-			var info = {};
-			var cardDir = 'card-images/';
-			$.ajax({
-					url:'ajax/card.php', 
-					data:{id:cardId}, 
-					type:'GET', 
-					dataType:'json', 
-					async:false, 
-					success:function(json){
-						info = json;
-						html = $('script[type="text/template"]#_cardView').html();
-						name = info.listname.replace(/\[\d+\]\s?/g,'');
-						html = html.replace(/\$cardName/, name);
-						html = html.replace(/\$frontImage/, cardDir+info.frontimg);
-						html = html.replace(/\$backImage/, cardDir+info.backimg);
-						$('script[type="text/template"]#_cardView').html(html);
-						openDialog('cardView', 'wide');
-					}
-			});
-
+			openDialog('ajax/card.php?id='+cardId, 'wide');
 		}
 			
 		</script>
