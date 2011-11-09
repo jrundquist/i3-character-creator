@@ -30,7 +30,9 @@
 	box-shadow: 0 0 30px #aaa;
 }
 
-
+#dialog-container.wide{
+	width: 860px;
+}
 /******************
  *  Dialog header
  * 

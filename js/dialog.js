@@ -30,7 +30,7 @@ $(document).delegate("#dialog-container","click",function(){
 /***
  * Callable functions 
  */
-function openDialog(url){
+function openDialog(url, specialClass){
 	
 	// If we dont have a dialog yet, make one
 	if ( $('#dynamic-dialog').length == 0 ){
@@ -40,6 +40,8 @@ function openDialog(url){
 	// Prepare to show the dialog ( hide the dialog and show the fadeout background )
 	$('#dialog-wrapper').hide();
 	$('#dialog-overlay').fadeIn();
+
+	$('#dialog-container').attr('class', specialClass);
 
 	// Load either the template, or the URL passed
 	if ( $('script[type="text/template"]#_'+url).length != 0 ){  // If we were passed an id of a template

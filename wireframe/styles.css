@@ -332,3 +332,16 @@ body{
 		font-family: "IconicStroke";
 		content: "               p";	
 	}
+	
+	
+/******************************
+ * Dialogs
+ * 
+******************************/
+
+/** 
+ * _cardView
+ **/
+#dialog-content img{
+	width: 420px;
+}

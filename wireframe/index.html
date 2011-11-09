@@ -324,9 +324,9 @@
 		</script>
 
 		<script type="text/template" id="_cardView">
-			<h1>Card Name</h1>
-			<img class="bigImg" src="images/card.jpg"/>
-			<img class="bigImg" src="images/card.jpg"/>
+			<h1>$cardName</h1>
+			<img id="front-card" class="bigImg" src="$backImage"/>
+			<img id="back-card"  class="bigImg" src="$frontImage"/>
 		</script>
 		
 		
@@ -344,7 +344,7 @@
 		});
 
 		$(document).delegate(".card","dblclick",function(){
-			openDialog('cardView');return false;
+			viewCard($(this).attr('card'));return false;
 		})
 		
 		$(function(){
@@ -368,6 +368,29 @@
 			$('#trash-overlay').fadeOut('fast');
 		}
 		
+		function viewCard(cardId){
+			var info = {};
+			var cardDir = 'card-images/';
+			$.ajax({
+					url:'ajax/card.php', 
+					data:{id:cardId}, 
+					type:'GET', 
+					dataType:'json', 
+					async:false, 
+					success:function(json){
+						info = json;
+						html = $('script[type="text/template"]#_cardView').html();
+						name = info.listname.replace(/\[\d+\]\s?/g,'');
+						html = html.replace(/\$cardName/, name);
+						html = html.replace(/\$frontImage/, cardDir+info.frontimg);
+						html = html.replace(/\$backImage/, cardDir+info.backimg);
+						$('script[type="text/template"]#_cardView').html(html);
+						openDialog('cardView', 'wide');
+					}
+			});
+
+		}
+			
 		</script>
 		
 	</body>
