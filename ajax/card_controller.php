@@ -1,14 +1,20 @@
 <?php
-require_once('models/card.php');
-if(isset($_GET['type']) || isset($_POST['type'])) {
-	$command = isset($_GET['type'])?$_GET['type']:$_POST['type'];
-	if(isset($_POST['cardid'])) {
-		$card = new Card($_POST['cardid']);
+
+
+set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT']);
+
+
+require_once('../models/card.php');
+
+
+if(isset($_REQUEST['type'])) {
+	if(isset($_REQUEST['cardId'])) {
+		$card = new Card($_REQUEST['cardId']);
 	}
 	else {
 		$card = False;
 	}
-	switch($command) {
+	switch($_REQUEST['type']) {
 		case 'get_cardlistname':
 			if(!$card) {
 				echo json_encode("failure");
@@ -53,7 +59,12 @@ if(isset($_GET['type']) || isset($_POST['type'])) {
 					"listname" => createCardListName($card),
 					"cardtype" => $card->getTypeAsStr()
 				);
-				echo json_encode($toret);
+				
+				echo '
+				<h1>'.preg_replace('%\[\d+\]%', '', $toret['listname']).'</h1>
+				<img id="front-card" class="bigImg" src="card-images/'.$toret['backimg'].'"/>
+				<img id="back-card"  class="bigImg" src="card-images/'.$toret['frontimg'].'"/>';
+				
 			}
 			break;
 		default:

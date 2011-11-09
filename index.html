@@ -35,7 +35,7 @@
 				<section class="row">
 					<section id="charInfo">
 						<div id="cardImgHolder" class="border">
-							<img class="card" id="cardImg" src="images/card.jpg">
+							<img class="card" id="cardImg" card="01-19-10" src="images/card.jpg">
 						</div>
 						<div id="charDisc" class="border">
 							<h3>Character Bio</h3>
@@ -332,6 +332,7 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
 		<script src="scripts/dialog.js"></script>
+		<script src="scripts/builder.js"></script>
 		
 		<script>
 		$(document).delegate("#charName h2, #pointsUP","keydown",function(){
@@ -344,39 +345,17 @@
 			viewCard($(this).attr('card'));return false;
 		})
 		
-		$(function(){
-			$(".deckContent").sortable({
-				connectWith: ".deckContent",
-				start: function(event,ui){
-					showTrash();
-				},
-				stop: function(event,ui){
-					hideTrash();
-				},
-				cursor: 'move',
-				zIndex: 5000
-			}).disableSelection();
-		});
-		
-		function showTrash(){
-			$('#trash-overlay').hide().fadeIn('fast');
-		}
-		function hideTrash(){
-			$('#trash-overlay').fadeOut('fast');
-		}
-		
-		function viewCard(cardId){
-			openDialog('ajax/card.php?id='+cardId, 'wide');
-		}
-
-		function save(){
-			openDialog('save');
-		}
-
-		function newChar(){
-			alert("New Stuff is happening!");
-		}
-			
+		$(".deckContent").sortable({
+			connectWith: ".deckContent",
+			start: function(event,ui){
+				showTrash();
+			},
+			stop: function(event,ui){
+				hideTrash();
+			},
+			cursor: 'move',
+			zIndex: 5000
+		}).disableSelection();
 		</script>
 		
 	</body>

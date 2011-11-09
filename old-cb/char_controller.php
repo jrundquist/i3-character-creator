@@ -4,15 +4,12 @@ session_start();
 require_once('get_userid.php');
 
 require_once('cb_backend/character.php');
-if(isset($_GET['type']) || isset($_POST['type'])) {
-	$command = isset($_GET['type'])?$_GET['type']:$_POST['type'];
-	if(isset($_SESSION['char'])) {
-		$char = unserialize($_SESSION['char']);
-	}
-	else {
-		$char = False;
-	}
-	switch($command) {
+if(isset($_REQUEST['type'])) {
+	$char = isset($_SESSION['char'])?unserialize($_SESSION['char']):false;
+	
+	
+	// Switch over the sent 'type' of request
+	switch($_REQUEST['type']) {
 		case 'new_character':
 			$char = new Character($userid, '', 0);
 			$_SESSION['char'] = serialize($char);
