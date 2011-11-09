@@ -728,7 +728,7 @@ function dispCardDetails(cid) {
     $.post("card_controller.php?type=get_typeimgsname", { cardid: cid }, function(data) {
         $("#headerPopup").html("Card Details");
         var cdetailhtml = "<center>";
- 	 cdetailhtml += '<img src="card_imgs/' + data["backimg"] + '" style="width: 45%;" >';
+		cdetailhtml += '<img src="card_imgs/' + data["backimg"] + '" style="width: 45%;" >';
         cdetailhtml += '<img src="card_imgs/' + data["frontimg"] + '" style="width: 45%;" >';
         cdetailhtml += '</center>';
         cdetailhtml += '<div id="closepopup"><input type="submit" value="Close Detail View" /></div>';

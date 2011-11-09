@@ -1,6 +1,40 @@
 
+/*************************
+ * Interface Functions  
+ * 
+ * Functions that are 
+ * directly called from 
+ * buttons, actions, etc
+ * in the interface
+*************************/
 
-/** Functions **/
+function showTrash(){
+	$('#trash-overlay').hide().fadeIn('fast');
+}
+function hideTrash(){
+	$('#trash-overlay').fadeOut('fast');
+}
+
+function viewCard(cardId){
+	openDialog('ajax/card_controller.php?type=get_typeimgsname&cardId='+cardId, 'wide');
+}
+
+function save(){
+	openDialog('save');
+}
+
+function newChar(){
+	alert("New Stuff is happening!");
+}
+
+
+
+/*************************
+ * Helper Functions  
+ * 
+ * Functions that are 
+ * called from other functions
+*************************/
 
 function refreshAllData() {
 	refreshCharInfo();
