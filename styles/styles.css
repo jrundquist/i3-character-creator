@@ -1,13 +1,3 @@
-@font-face {
-  font-family: 'IconicStroke';
-    src: url("../fonts/iconic_stroke.eot");
-    src: local('IconicStroke'),
-       url("../fonts/iconic_stroke.svg#iconic") format('svg'),
-	   url("../fonts/iconic_stroke.otf") format('opentype');
-}
-
-
-
 body{
 	font-family: 'PT Sans', 'Myriad Pro', 'Helvetica', sans-serif;
 	margin: 10px 10px 30px;

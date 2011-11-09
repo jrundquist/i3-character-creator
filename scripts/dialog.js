@@ -64,4 +64,6 @@ function openDialog(url, specialClass){
 function closeDialog(){
 	$('#dialog-wrapper').hide();
 	$('#dialog-overlay').fadeOut();
+	$('#dialog-container').removeAttr('class');
+	
 }
