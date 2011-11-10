@@ -62,8 +62,12 @@ if(isset($_REQUEST['type'])) {
 				
 				echo '
 				<h1>'.preg_replace('%\[\d+\]%', '', $toret['listname']).'</h1>
-				<img id="front-card" class="bigImg" src="card-images/'.$toret['backimg'].'"/>
-				<img id="back-card"  class="bigImg" src="card-images/'.$toret['frontimg'].'"/>';
+				<div class="card-container">
+					<img id="front-card" class="bigImg" src="card-images/'.$toret['backimg'].'"/>
+				</div>
+				<div class="card-container">
+					<img id="back-card"  class="bigImg" src="card-images/'.$toret['frontimg'].'"/>
+				</div>';
 				
 			}
 			break;

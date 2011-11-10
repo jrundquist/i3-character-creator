@@ -332,6 +332,20 @@ body{
 /** 
  * _cardView
  **/
-#dialog-content img{
+#dialog-content div.card-container{
+	display: block;
 	width: 420px;
+	height: auto;
+	float: left;
+	overflow: hidden;
+	margin-right: 3px;
 }
+#dialog-content div.card-container img{
+	width: 500px;
+	position: relative;
+	top: -40px;
+	left: -40px;
+	margin-bottom: -80px;
+}
+
+
