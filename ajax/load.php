@@ -1,15 +1,28 @@
 <?php
 session_start();
-
-
 set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER['DOCUMENT_ROOT']);
 
-
 //Sets the $userid variable.
-require_once('user.php');
+require_once('ajax/user.php');
+require_once('models/db_lib.php');
+require_once('models/character.php');
 
 
-require_once('../models/db_lib.php');
+// If we were passed an ID load the character into the session
+if ( isset($_REQUEST['id']) && intval($_REQUEST['id']) > 0 ){
+	$charid = intval($_REQUEST['charid']);
+	if(!$char) {
+		$char = new Character($userid, '', 0);
+	}
+	$char->getCharacter($charid, $userid);
+	$_SESSION['char'] = serialize($char);
+	echo json_encode($char);
+	die();
+}
+
+
+// Show the list of characters
+
 
 $characters = get_cbdb_users_characters($userid, get_cbdb_connection());
 $result = array();

@@ -78,6 +78,16 @@
 	padding:0;
 }
 
+#dialog-footer button{
+	background: #DDD;
+	border: 1px solid #000;
+	box-shadow: 0px 0px 5px rgba(0,0,0,.3);
+	padding: 5px 15px;
+	font-size: 13px;
+	font-weight: bold;
+	text-transform: lowercase;
+}
+
 #dialog-footer #footer-left{
 	float:left;
 	text-algin:left;

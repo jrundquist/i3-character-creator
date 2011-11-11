@@ -48,6 +48,36 @@ function loadChar(){
 			});
 }
 
+function doLoad(){
+	$this = $('.loadable-character.chosen');
+	if ( $this.length == 0 ){
+		return false;
+	}
+	//Show image
+	character = $this.data('character');
+	if ( character ){
+		$.ajax({	url:'/ajax/load.php',
+		 			type: "POST",
+					data: {id : character.charid},
+					dataType: "json",
+					success: function(d){ 
+						console.log('loaded!',d);
+						//Want to refresh the data on the page with the retreived character.
+						// refreshAllData();
+						// refreshEquippedCards();
+						$('#charName h2').html(character.charname);
+						if ( character.image ) 
+							$('img#cardImg').attr('src','http://testcb.untoldthegame.com/Version1.3/card_imgs/'+character.image);
+						else
+							$('img#cardImg').attr('src', 'images/unknown.png');
+						// disablePopup();
+						closeDialog();
+					}
+			});
+	}
+	
+}
+
 
 /*************************
  * Helper Functions  
