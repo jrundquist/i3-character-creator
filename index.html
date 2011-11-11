@@ -28,7 +28,7 @@
 					</div>
 				<nav id="menu">
 					<a class="navButton" href='#' onClick="newChar()">new</a>
-					<a class="navButton" href='#' onClick="openDialog('/load')">load</a>
+					<a class="navButton" href='#' onClick="loadChar()">load</a>
 					<a class="navButton" href='#' onClick="save()">save</a>
 				</nav>
 				</section>
@@ -314,7 +314,6 @@
 					</td>
 				</tr>
 			</table>
-
 		</script>
 		
 		
@@ -326,6 +325,29 @@
 		<script type="text/template" id="_save">
 			<h1>Character Saved</h1>
 			<p>Here we should write up something that would help the user. Maybe describe some stuff?</p>
+		</script>
+		
+		<script type="text/template" id="_load">
+			<h1>Load</h1>
+			<section id="loader">
+				<div id="character-list-container">
+					<div id="character-list">
+					</div>
+				</div>
+				<div id="character-image-container">
+					<div id="character-image">
+						<img src="" alt="" />
+					</div>
+				</div>
+			</section>
+			
+			<div id="dialog-footer">
+				<div id="footer-left">
+					<button id="delete-character" onClick="deleteChar()">Delete</button>
+				</div>
+				<button id="cancel-button" onClick="closeDialog()">Cancel</button>
+				<button id="load-character" onClick="loadChar()">Load</button>
+			</div>
 		</script>
 		
 		<!-- Javascript -->
@@ -343,6 +365,25 @@
 
 		$(document).delegate(".card","dblclick",function(){
 			viewCard($(this).attr('card'));return false;
+		})
+		
+		$(document).delegate(".loadable-character","click",function(){
+			$('.loadable-character').each(function(){
+				$(this).removeClass('chosen');
+			})
+			$this = $(this);
+			$this.addClass('chosen');
+			//Show image
+			character = $this.data('character');
+			if ( character ){
+				console.log(character);
+				if ( character.image ){
+					$('#character-image img').attr('src', 'http://testcb.untoldthegame.com/Version1.3/card_imgs/'+character.image);
+				}else{
+					$('#character-image img').attr('src', 'images/unknown.png');
+				}
+			}
+			
 		})
 		
 		$(".deckContent").sortable({

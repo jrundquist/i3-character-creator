@@ -31,6 +31,23 @@ function addCard(deck){
 	alert(deck);
 }
 
+function loadChar(){
+	openDialog('load');
+	
+	$.ajax({	url:'/ajax/load.php',
+				dataType:'json',
+				success: function(j){
+					$list = $('#character-list').empty();
+					for(i=0; i<j.length; i++){
+						character = j[i];
+						
+						$added = $('<div id="character-'+character['charid']+'" class="loadable-character">'+character['charname']+'</div>').appendTo($list);
+						$added.data('character', character);
+					}
+				}
+			});
+}
+
 
 /*************************
  * Helper Functions  

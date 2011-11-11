@@ -18,13 +18,14 @@ function initFooter(){
 /*** 
  * Functions to handle default events 
  */
-$(document).delegate("#close-button, #dialog-wrapper, #dialog-close","click",function(){
-	closeDialog();
+$(document).delegate("#close-button, #dialog-wrapper, #dialog-close","click",function(event){
+	var options = {'close-button':'', 'dialog-wrapper':'', 'dialog-close':''};
+	// If one of the elements we are looking for has been clicked, close the dialog
+	// This check prevents against children from triggering the close	
+	if ( event.target.id in options )
+		closeDialog();
 });
-$(document).delegate("#dialog-container","click",function(){
-	e.cancelBubble = true;
-	e.stopPropagation();
-});
+
 
 
 /***
@@ -53,8 +54,10 @@ function openDialog(url, specialClass){
 	// Set the content into the dialog container
 	$('#dialog-wrapper #dialog-container #dialog-content').html(content);
 
+	$('#dialog-wrapper #dialog-container > #dialog-footer').remove();
+
 	// Make sure there is a footer ( where the action buttons are )
-	if ( $('#dialog-wrapper #dialog-container #dialog-footer').length == 0 ){
+	if ( $('#dialog-wrapper #dialog-container #dialog-content #dialog-footer').length == 0 ){
 		initFooter();
 	}
 	// Show the dialog itself

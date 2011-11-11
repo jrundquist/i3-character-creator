@@ -348,4 +348,54 @@ body{
 	margin-bottom: -80px;
 }
 
+/** 
+ * _load
+ **/
+#dialog-content #loader{
+	width: 100%;
+}
 
+#loader #character-list-container{
+	border: 2px solid black;
+	width: 340px;
+	background: #ddd;
+	height: 275px;
+	float: left;
+	overflow-y: auto;
+	margin-left: 10px;
+}
+	#character-list-container #character-list{
+		margin: 3px;
+	}
+		#loader #character-list .loadable-character{
+			background: #fff;
+			border: 1px solid #f2f2f2;
+			padding: 5px;
+			font-weight: bold;
+			margin: 0 0 1px 0;
+			cursor: pointer;
+		}
+		#loader #character-list .loadable-character.chosen{
+			background: #0CC;
+		
+			color: #000;
+}
+#loader #character-image-container{
+	width: 230px;
+	height: 280px;
+	margin-left: 370px;
+}
+	#loader #character-image-container #character-image{
+		overflow: hidden;
+		width: 205px;
+		height: 100%;
+	}
+		#loader #character-image-container #character-image img{
+			width: 244px;
+			left: -20px;
+			top: -22px;
+			position: relative;
+		}
+		
+		
+ 
