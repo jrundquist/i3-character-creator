@@ -4,13 +4,29 @@
  *
 *************************/
 
-Character = function(name, id, totalUP, swapBuffer){
-	this.name = name;
-	this.id = id;
-	this.totalUP = totalUP;
-	this.swapBuffer = swapBuffer;
 
+function cast(rawObj, constructor){
+    var obj = new constructor();
+    for(var i in rawObj){
+        obj[i] = rawObj[i];
+	}
+    return obj;
 }
+
+
+
+// Sub-object for storing the stats of the character
+Stats = function(){}
+
+Stats.prototype.mind = {attack:  0, defence: 0, boost: 0};
+Stats.prototype.body = {attack:  0, defence: 0, boost: 0};
+Stats.prototype.soul = {attack:  0, defence: 0, boost: 0};
+Stats.prototype.vitality = 0;
+
+
+
+// Character prototype
+Character = function(name, id, totalUP, swapBuffer){}
 
 Character.prototype.name = null;
 Character.prototype.id = null;
@@ -20,14 +36,13 @@ Character.prototype.description = null;
 Character.prototype.deck = [];
 Character.prototype.swapDeck = [];
 Character.prototype.stats = new Stats();
+Character.prototype.testFunction = function(){
+	console.log("Hello says "+this.name);
+};
 
-Stats = function(){}
 
-Stats.prototype.mind = {ATK:  0, DEF: 0, BOOST: 0};
-Stats.prototype.body = {ATK:  0, DEF: 0, BOOST: 0};
-Stats.prototype.soul = {ATK:  0, DEF: 0, BOOST: 0};
-Stats.prototype.vitality = 0;
-
+// Create the global character object
+character = new Character();
 
 
 /*************************
@@ -80,10 +95,9 @@ function loadChar(){
 				success: function(j){
 					$list = $('#character-list').empty();
 					for(i=0; i<j.length; i++){
-						character = j[i];
-						
-						$added = $('<div id="character-'+character['charid']+'" class="loadable-character">'+character['charname']+'</div>').appendTo($list);
-						$added.data('character', character);
+						characterShort = j[i];
+						$added = $('<div id="character-'+characterShort['charid']+'" class="loadable-character">'+characterShort['charname']+'</div>').appendTo($list);
+						$added.data('character', characterShort);
 					}
 				}
 			});
@@ -95,22 +109,16 @@ function doLoad(){
 		return false;
 	}
 	//Show image
-	character = $this.data('character');
+	characterShort = $this.data('character');
 	if ( character ){
 		$.ajax({	url:'/ajax/load.php',
 		 			type: "POST",
-					data: {id : character.charid},
+					data: {id : characterShort.charid},
 					dataType: "json",
-					success: function(d){ 
-						console.log('loaded!',d);
-						//Want to refresh the data on the page with the retreived character.
-						// refreshAllData();
-						// refreshEquippedCards();
-						$('#charName h2').html(character.charname);
-						if ( character.image ) 
-							$('img#cardImg').attr('src','http://testcb.untoldthegame.com/Version1.3/card_imgs/'+character.image);
-						else
-							$('img#cardImg').attr('src', 'images/unknown.png');
+					success: function(charaterLoaded){ 
+						
+						character = cast(charaterLoaded, Character);
+						resetAll();
 						// disablePopup();
 						closeDialog();
 					}
@@ -130,29 +138,38 @@ function doLoad(){
 function resetAll() {
 	reloadStats();
 	reloadCharacter();
-	reloadDecks();
+	// reloadDecks();
+}
+
+function reloadCharacter(){
+	$('#charName h2').html(character.name);
+	if ( characterShort.image ) 
+		$('img#cardImg').attr('src','http://testcb.untoldthegame.com/Version1.3/card_imgs/'+characterShort.image);
+	else
+		$('img#cardImg').attr('src', 'images/unknown.png');
 }
 
 function reloadStats() {
+	// loops through the stats of the character
 	for( aspect in character.stats ){
 			for( bonus in character.stats[aspect] ){
-				$('.statNum.'+aspects+'.'+bonus).html(character.stats.aspect.bonus);
+				$('.statNum.'+aspect+'.'+bonus).html(character.stats[aspect][bonus]);
 			}
 		}
 	$('.statNum#vitality').html(character.stats.vitality);
 }
 
-function reloadCharacter() {
-	$.post("char_controller.php?type=get_charname",{  }, function(data){
-		$('#charname').html(data);
-		}, "json");
-	$.post("char_controller.php?type=get_chardesc",{  }, function(data){
-		$('#chardesc').html(data);
-		}, "json");
-	$.post("char_controller.php?type=get_totalup",{  }, function(data){
-		$('#totalup').html(data);
-		}, "json");
-	$.post("char_controller.php?type=get_currentup",{  }, function(data){
-		$('#swapbuffer').html(data);
-		}, "json");
-}
+// function reloadCharacter() {
+// 	$.post("char_controller.php?type=get_charname",{  }, function(data){
+// 		$('#charname').html(data);
+// 		}, "json");
+// 	$.post("char_controller.php?type=get_chardesc",{  }, function(data){
+// 		$('#chardesc').html(data);
+// 		}, "json");
+// 	$.post("char_controller.php?type=get_totalup",{  }, function(data){
+// 		$('#totalup').html(data);
+// 		}, "json");
+// 	$.post("char_controller.php?type=get_currentup",{  }, function(data){
+// 		$('#swapbuffer').html(data);
+// 		}, "json");
+// }

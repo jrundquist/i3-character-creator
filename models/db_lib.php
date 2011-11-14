@@ -175,7 +175,7 @@ function get_race_card_id($charID, $dbconn){
 	}
 	$toret = array();
 	while($res = mysql_fetch_assoc($result)) {
-		return $res[cardid];
+		return $res['cardid'];
 	}
 }
 

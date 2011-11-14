@@ -280,6 +280,36 @@ public function getCharacter($charid, $userid) {
 	}
 }
 
+//Constructs the character object from its character id.
+public static function factoryChar($charid, $userid) {
+	$newcharrep = get_cbdb_character($charid, $userid, get_cbdb_connection());
+
+	//Overwrite this character's data with what the DB returned.
+	$char = new Character($userid, $newcharrep["charinfo"]["charname"], $newcharrep["charinfo"]["totalup"]);
+	$char->setCharID($charid);
+	$char->setCharDesc($newcharrep["charinfo"]["chardesc"]);
+	$char->lastModified = $newcharrep["charinfo"]["lastmodified"];
+
+	foreach($newcharrep["cards"] as $index => $cardid) {
+		$tempcard = new Card($cardid);
+		$char->addCard($tempcard);
+	}
+	return $char;
+}
+
+
+public function toJSON(){
+	$result = '{ "name": "'.$this->charName.'", "id": '.$this->charID.', "description": "'.$this->chardesc.'", "notes":"", "totalUP": "'.$this->totalUP.'", "swapBuffer":"'.$this->getCurrentUP().'", ';
+	$result .= '"deck": '.json_encode($this->cards).', "swapDeck": [], ';
+	$result .= '"stats": { "mind": '.json_encode($this->mind).', "body": '.json_encode($this->body).', "soul": '.json_encode($this->soul).', "vitality": '.json_encode($this->vit).'} }';
+	
+	$result = str_replace(array('atk','def','bst'), array('attack', 'defense', 'boost'), $result);
+	// Todo-- 
+	
+	return $result;
+	
+}
+
 //Prints info about the character.
 public function printCharInfo() {
 	print $this->strRepresentation();

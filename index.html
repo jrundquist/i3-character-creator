@@ -66,7 +66,7 @@
 								<td id="atkBody" class="statNum body attack">
 									0
 								</td>
-								<td id="defBody" class="statNum body defence">
+								<td id="defBody" class="statNum body defense">
 									0
 								</td>
 								<td id="boostBody" class="statNum body boost">
@@ -80,10 +80,10 @@
 								<td id="atkMind" class="statNum mind attack">
 									0
 								</td>
-								<td id="defMind" class="statNum defence">
+								<td id="defMind" class="statNum mind defense">
 									0
 								</td>
-								<td id="boostMind" class="statNum boost">
+								<td id="boostMind" class="statNum mind boost">
 									0
 								</td>
 							</tr>
@@ -94,7 +94,7 @@
 								<td id="atkSoul" class="statNum soul attack">
 									0
 								</td>
-								<td id="defSoul" class="statNum soul defence">
+								<td id="defSoul" class="statNum soul defense">
 									0
 								</td>
 								<td id="boostSoul" class="statNum soul boost">
@@ -374,11 +374,11 @@
 			$this = $(this);
 			$this.addClass('chosen');
 			//Show image
-			character = $this.data('character');
-			if ( character ){
-				console.log(character);
-				if ( character.image ){
-					$('#character-image img').attr('src', 'http://testcb.untoldthegame.com/Version1.3/card_imgs/'+character.image);
+			characterShort = $this.data('character');
+			if ( characterShort ){
+				console.log(characterShort);
+				if ( characterShort.image ){
+					$('#character-image img').attr('src', 'http://testcb.untoldthegame.com/Version1.3/card_imgs/'+characterShort.image);
 				}else{
 					$('#character-image img').attr('src', 'images/unknown.png');
 				}
