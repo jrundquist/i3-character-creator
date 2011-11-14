@@ -1,3 +1,34 @@
+/*************************
+ *
+ * This file contains the actual application scripts
+ *
+*************************/
+
+Character = function(name, id, totalUP, swapBuffer){
+	this.name = name;
+	this.id = id;
+	this.totalUP = totalUP;
+	this.swapBuffer = swapBuffer;
+
+}
+
+Character.prototype.name = null;
+Character.prototype.id = null;
+Character.prototype.totalUP = null;
+Character.prototype.swapBuffer = null;
+Character.prototype.description = null;
+Character.prototype.deck = [];
+Character.prototype.swapDeck = [];
+Character.prototype.stats = new Stats();
+
+Stats = function(){}
+
+Stats.prototype.mind = {ATK:  0, DEF: 0, BOOST: 0};
+Stats.prototype.body = {ATK:  0, DEF: 0, BOOST: 0};
+Stats.prototype.soul = {ATK:  0, DEF: 0, BOOST: 0};
+Stats.prototype.vitality = 0;
+
+
 
 /*************************
  * Interface Functions  
