@@ -139,14 +139,26 @@ function resetAll() {
 	reloadStats();
 	reloadCharacter();
 	// reloadDecks();
+	reloadUP();
+}
+
+function reloadUP(){
+	$('#pointsUP').html(character.totalUP);
+	$('#pointsSB').html(character.swapBuffer);
 }
 
 function reloadCharacter(){
+	// Name
 	$('#charName h2').html(character.name);
+	
+	// Image
 	if ( characterShort.image ) 
 		$('img#cardImg').attr('src','http://testcb.untoldthegame.com/Version1.3/card_imgs/'+characterShort.image);
 	else
 		$('img#cardImg').attr('src', 'images/unknown.png');
+		
+	// Description
+	$('#charDiscTxt').html(character.description);
 }
 
 function reloadStats() {
