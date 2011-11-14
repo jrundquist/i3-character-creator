@@ -36,10 +36,14 @@ Character.prototype.description = null;
 Character.prototype.deck = [];
 Character.prototype.swapDeck = [];
 Character.prototype.stats = new Stats();
-Character.prototype.testFunction = function(){
-	console.log("Hello says "+this.name);
-};
 
+Character.prototype.calcSwapBuffer = function(){
+	this.swapBuffer = this.totalUP;
+	for(card in this.deck){
+		this.swapBuffer -= parseFloat(this.deck[card].cost);
+	}
+}
+	
 
 // Create the global character object
 character = new Character();
@@ -144,6 +148,7 @@ function resetAll() {
 
 function reloadUP(){
 	$('#pointsUP').html(character.totalUP);
+	character.calcSwapBuffer();
 	$('#pointsSB').html(character.swapBuffer);
 }
 

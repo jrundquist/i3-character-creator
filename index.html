@@ -357,16 +357,64 @@
 		<script src="scripts/builder.js"></script>
 		
 		<script>
+		// Check that we are not pressing enter in the box and that it meets size requirements.
 		$(document).delegate("#charName h2, #pointsUP","keydown",function(){
 			if (event.keyCode == 13 || ($("#charName h2").html().length > 35 && event.keyCode != 8 && event.keyCode != 46) ){
 				return false;
 			}
 		});
-
+		
+		/******************
+		 * Updaters
+		 *
+		 * These are used to update the values when 
+		 * the user navigates away from the editable 
+		 * element. 
+		 ******************/
+		$(document).delegate("#charName h2","blur",function(){
+			character.name = $(this).html().trim();
+		});
+		$(document).delegate("#charDiscTxt","blur",function(){
+			character.description = $(this).html().trim();
+		});
+		$(document).delegate("#pointsUP", "blur", function(){
+			var newValue = parseFloat($(this).html().trim());
+			if ( newValue > 0 ){
+				character.totalUP = newValue;
+			}
+			reloadUP();
+		});
+		
+		
+		
+		/******************
+		 * Card Actions
+		 *
+		 * These are the events for the cards themseleves 
+		 ******************/
+		
+		// Shows the card when it is double clicked
 		$(document).delegate(".card","dblclick",function(){
 			viewCard($(this).attr('card'));return false;
 		})
 		
+		// Sets the cards to be sortable / draggable
+		$(".deckContent").sortable({
+			connectWith: ".deckContent",
+			start: function(event,ui){
+				showTrash();
+			},
+			stop: function(event,ui){
+				hideTrash();
+			},
+			cursor: 'move',
+			zIndex: 5000
+		}).disableSelection();
+		
+		
+		
+		// This sets the onclick action in the loading dialog box
+		/// It shows the card preview based on the selected character.
 		$(document).delegate(".loadable-character","click",function(){
 			$('.loadable-character').each(function(){
 				$(this).removeClass('chosen');
@@ -386,17 +434,7 @@
 			
 		})
 		
-		$(".deckContent").sortable({
-			connectWith: ".deckContent",
-			start: function(event,ui){
-				showTrash();
-			},
-			stop: function(event,ui){
-				hideTrash();
-			},
-			cursor: 'move',
-			zIndex: 5000
-		}).disableSelection();
+
 		</script>
 		
 	</body>
