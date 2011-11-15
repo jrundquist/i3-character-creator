@@ -33,10 +33,10 @@ foreach($characters as $charcater) {
 		$charcater['image'] = false;
 	}
 	
-	// // If the character's name is null, then set it to a default value
-	// if ( strlen(trim($charcater['charname'])) == 0){
-	// 	$charcater['charname'] = '[Nameless Character]';
-	// }
+	// If the character's name is null, then set it to a default value
+	if ( strlen(trim($charcater['charname'])) == 0){
+		$charcater['charname'] = '[Nameless Character]';
+	}
 	
 	// Append this character to to the results
 	$result[] = $charcater;
