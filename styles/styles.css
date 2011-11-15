@@ -266,14 +266,15 @@ body{
 		margin: 5px 0 10px 0;
 		cursor: pointer;
 	}
+		/* These have !important to override in the dialog box adding cards */
 		.red{
-			border-color: #F00;
+			border-left-color: #F00 !important;
 		}
 		.blue{
-			border-color: #3fa9f5;
+			border-left-color: #3fa9f5 !important;
 		}
 		.yellow{
-			border-color: #fcee21;
+			border-left-color: #fcee21 !important;
 		}
 		.cardCost{
 			display: block;
@@ -366,6 +367,9 @@ body{
 	margin-bottom: -80px;
 }
 
+
+
+
 /** 
  * _load
  **/
@@ -395,7 +399,7 @@ body{
 		}
 		#loader #character-list .loadable-character.chosen{
 			background: #0CC;
-		
+
 			color: #000;
 }
 #loader #character-image-container{
@@ -409,6 +413,59 @@ body{
 		height: 100%;
 	}
 		#loader #character-image-container #character-image img{
+			width: 244px;
+			left: -20px;
+			top: -22px;
+			position: relative;
+		}
+
+
+
+
+/** 
+ * _add-cards
+ **/
+#dialog-content #adder{
+	width: 100%;
+}
+
+#adder #card-list-container{
+	border: 2px solid black;
+	width: 340px;
+	background: #ddd;
+	height: 275px;
+	float: left;
+	overflow-y: auto;
+	margin-left: 10px;
+}
+	#card-list-container #deck-cards-list{
+		margin: 3px;
+	}
+		#adder #deck-cards-list .loadable-card{
+			background: #fff;
+			border: 1px solid #f2f2f2;
+			padding: 5px;
+			font-weight: bold;
+			margin: 0 0 1px 0;
+			cursor: pointer;
+			border-left: 10px solid;
+		}
+		
+		#adder #deck-cards-list .loadable-card.chosen{
+			background: #0CC;
+			color: #000;
+		}
+#adder #add-card-image-container{
+	width: 230px;
+	height: 280px;
+	margin-left: 370px;
+}
+	#adder #add-card-image-container #add-card-image{
+		overflow: hidden;
+		width: 205px;
+		height: 100%;
+	}
+		#adder #add-card-image-container #add-card-image img{
 			width: 244px;
 			left: -20px;
 			top: -22px;

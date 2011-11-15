@@ -329,6 +329,27 @@
 			</div>
 		</script>
 		
+		
+		<script type="text/template" id="_add-cards">
+			<h1>Add Cards From Deck</h1>
+			<section id="adder">
+				<div id="card-list-container">
+					<div id="deck-cards-list">
+					</div>
+				</div>
+				<div id="add-card-image-container">
+					<div id="add-card-image">
+						<img src="" alt="" />
+					</div>
+				</div>
+			</section>
+		
+			<div id="dialog-footer">
+				<button id="cancel-button" onClick="closeDialog()">Cancel</button>
+				<button id="add-cards-to-deck" onClick="doAddCard()">Add</button>
+			</div>
+		</script>
+		
 		<script type="text/template" id="card">
 			<div class="deckCard {color} card" card="{id}">
 				<div class="cardCost">
@@ -438,16 +459,29 @@
 			//Show image
 			characterShort = $this.data('character');
 			if ( characterShort ){
-				console.log(characterShort);
 				if ( characterShort.image ){
 					$('#character-image img').attr('src', 'http://testcb.untoldthegame.com/Version1.3/card_imgs/'+characterShort.image);
 				}else{
 					$('#character-image img').attr('src', 'images/unknown.png');
 				}
-			}
-			
+			}	
 		})
 		
+		$(document).delegate(".loadable-card", "click", function(){
+			$this = $(this);
+			$this.toggleClass('chosen');
+
+			// Show image
+			card = $this.data('card');
+			if ( card ){
+				console.log(card);
+				if ( card.picture ){
+					$('#add-card-image img').attr('src', 'http://testcb.untoldthegame.com/Version1.3/card_imgs/'+card.backpic);
+				}else{
+					$('#add-card-image img').attr('src', 'images/unknown.png');
+				}
+			}
+		});
 
 		</script>
 		
