@@ -439,7 +439,23 @@
 			},
 			stop: function(event,ui){
 				hideTrash();
+				$( ".deckContent#charDeckContent" ).sortable({ disabled: false })
 			},
+			receive: function(event, ui) {
+				$card = $(ui.item[0]);
+				card = $card.data('card');
+				deckId = $card.parent().attr('id');
+				if ( ui.sender[0].id == 'swapDeckContent' && card.cardType == 1 ){
+					for( card in character.deck ){
+						if ( character.deck[card].cardType == 1 ){
+							// Prevent card from being dropped 
+							console.log('Trying to stop from being dropped because', character.deck[card]);
+							$(ui.sender).sortable('cancel');
+						}
+					}
+				}
+			},
+			
 			update: function(event, ui) {
 				updateDecks();
 				return true;
