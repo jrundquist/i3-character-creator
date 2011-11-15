@@ -16,14 +16,11 @@ if ( isset($_REQUEST['id']) && intval($_REQUEST['id']) > 0 ){
 	$char = Character::factoryChar($charid, $userid);
 	$_SESSION['char'] = serialize($char);
 	echo $char->toJSON();
-	
 	die();
 }
 
 
 // Show the list of characters
-
-
 $characters = get_cbdb_users_characters($userid, get_cbdb_connection());
 $result = array();
 foreach($characters as $charcater) {
@@ -36,10 +33,10 @@ foreach($characters as $charcater) {
 		$charcater['image'] = false;
 	}
 	
-	// If the character's name is null, then set it to a default value
-	if ( strlen(trim($charcater['charname'])) == 0){
-		$charcater['charname'] = '[Nameless Character]';
-	}
+	// // If the character's name is null, then set it to a default value
+	// if ( strlen(trim($charcater['charname'])) == 0){
+	// 	$charcater['charname'] = '[Nameless Character]';
+	// }
 	
 	// Append this character to to the results
 	$result[] = $charcater;

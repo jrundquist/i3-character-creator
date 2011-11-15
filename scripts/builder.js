@@ -7,6 +7,9 @@
  * 
 *************************/
 
+
+
+
 /*************************
  * Data Helper Functions  
  * 
@@ -93,19 +96,28 @@ Character.prototype.sessionSave = function(){
 }
 
 
+
+
+
+/*************************
+ * Global Variables
+ * 
+*************************/
+var cardColor = {'1':'red', '2':'yellow', '3':'blue'};
+var character = new Character();
+
 // Create the global character object
 if ( sessionStorage && sessionStorage.character ){
 	try{
-		charObj = JSON.parse(sessionStorage.character);
-		character = cast(charObj, Character);
+		character = cast(JSON.parse(sessionStorage.character), Character);
 	}catch(err){
-		character = new Character();
+	 // Do nothing
 	}
-
-}else{
-	character = new Character();	
 }
 resetAll();
+
+
+
 
 
 /*************************
@@ -167,23 +179,48 @@ function newChar(){
 
 // Ad card dialog
 function addCard(deck){
-	openDialog('addCard','wide');
-
-	//Temp Content - Probably eventually helper method
-	var $swapDeck = $('#swapDeckContent-add'),
-		template = $('script[type="text/template"]#card').html(),
-		cardColor = {'1':'red', '2':'yellow', '3':'blue'};
-	
-	console.log(character);
-	console.log(character.swapDeck);
-	for(card in character.swapDeck){
-		thisCard = template .replace('{color}', cardColor[character.swapDeck[card].cardType])
-							.replace('{id}', character.swapDeck[card].id)
-							.replace('{name}', character.swapDeck[card].name)
-							.replace('{cost}', character.swapDeck[card].cost);
-		$(thisCard).appendTo($swapDeck).data('card', character.swapDeck[card]);
-	}
+	openDialog('add-cards');
+	$('#add-cards-to-deck').attr('where', deck);
+	$.ajax({	url:'/ajax/add.php',
+				dataType: 'json',
+				cache: true,	// We can cache since this does not change often
+				success: function(cards){
+					$list = $('#deck-cards-list').empty();
+					for( i in cards ){
+						card = cards[i];
+						$added = $('<div id="card-'+card.card.id+'" class="loadable-card '+cardColor[card.card.cardType]+'">'+card.card.cost+' | '+card.name+'</div>').appendTo($list).data('card', card.card);
+					}
+				}
+			});
 }
+
+// This is the function that is called when a card set needs to be loaded
+function doAddCard(){
+	var where = $('#add-cards-to-deck').attr('where'),
+		$list = $('.loadable-card.chosen');
+	console.log(where);
+	for ( i=0; i< $list.length; i++ ){
+		card = $($list[i]).data('card');
+		console.log('i see', card);
+		if ( $('.deckCard[card="'+card.id+'"]').length == 0 ){	// Uniqueness check
+			if ( where == 'char' ){
+				character.deck.push(card);
+				reloadDecks();
+				reloadUP();
+			}else{
+				console.log('adding', card);
+				character.swapDeck.push(card);
+				reloadDecks();
+			}
+		}
+		
+	}
+	reloadStats();
+	closeDialog();
+	// simply add cards to correct character.deck list
+	// THen class reloadDeck , UP, and stats (  only stats if where == char )
+}
+
 
 // This is the dialog for loading characters
 function loadChar(){
@@ -255,8 +292,7 @@ function reloadDecks(){
 	// Clear the decks
 	var $deck = $('#charDeckContent'),
 		$swapDeck = $('#swapDeckContent'),
-		template = $('script[type="text/template"]#card').html(),
-		cardColor = {'1':'red', '2':'yellow', '3':'blue'};
+		template = $('script[type="text/template"]#card').html();
 	
 	$deck.empty();
 	$swapDeck.empty();
@@ -267,6 +303,15 @@ function reloadDecks(){
 							.replace('{name}', character.deck[card].name)
 							.replace('{cost}', character.deck[card].cost);
 		$(thisCard).appendTo($deck).data('card', character.deck[card]);
+	}
+	
+	
+	for(card in character.swapDeck){
+		thisCard = template .replace('{color}', cardColor[character.swapDeck[card].cardType])
+							.replace('{id}', character.swapDeck[card].id)
+							.replace('{name}', character.swapDeck[card].name)
+							.replace('{cost}', character.swapDeck[card].cost);
+		$(thisCard).appendTo($swapDeck).data('card', character.swapDeck[card]);
 	}
 }
 
@@ -310,7 +355,9 @@ function reloadCharacter(){
 
 
 function updateDecks(){
-	var $deck = $('#charDeckContent');
+	var $deck = $('#charDeckContent'),
+		$swapDeck = $('#swapDeckContent'),
+		$trashDeck = $('#trash-overlay').empty();
 	
 	newDeck = [];
 	// Build the deck based on 
@@ -341,6 +388,16 @@ function updateDecks(){
 	}
 	
 	character.deck = newDeck;
+	
+	character.swapDeck = [];
+	// Build the swap deck based on the existing
+	$swapDeck.children('.deckCard').each(function(index, card){
+		$card = $(card);
+		if ( $card.data('card') ){
+			character.swapDeck.push( $card.data('card') );
+		}
+	});
+	
 	
 	// Recalculate everything based on the new card configuration
 	reloadUP();
