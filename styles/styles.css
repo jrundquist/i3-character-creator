@@ -415,5 +415,11 @@ body{
 			position: relative;
 		}
 		
-		
+
+#deck{
+	float:left;
+}
+#hot-swap-deck-add{
+	margin-left:440px;
+}
  

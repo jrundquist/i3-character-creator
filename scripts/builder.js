@@ -167,7 +167,22 @@ function newChar(){
 
 // Ad card dialog
 function addCard(deck){
-	alert(deck);
+	openDialog('addCard','wide');
+
+	//Temp Content - Probably eventually helper method
+	var $swapDeck = $('#swapDeckContent-add'),
+		template = $('script[type="text/template"]#card').html(),
+		cardColor = {'1':'red', '2':'yellow', '3':'blue'};
+	
+	console.log(character);
+	console.log(character.swapDeck);
+	for(card in character.swapDeck){
+		thisCard = template .replace('{color}', cardColor[character.swapDeck[card].cardType])
+							.replace('{id}', character.swapDeck[card].id)
+							.replace('{name}', character.swapDeck[card].name)
+							.replace('{cost}', character.swapDeck[card].cost);
+		$(thisCard).appendTo($swapDeck).data('card', character.swapDeck[card]);
+	}
 }
 
 // This is the dialog for loading characters

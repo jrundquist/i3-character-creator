@@ -303,6 +303,31 @@
 				<button id="load-character" onClick="doLoad()">Load</button>
 			</div>
 		</script>
+
+		<script type="text/template" id="_addCard">
+			<h1>Add Card</h1>
+			<div class="deck border" id="deck">
+				<div class="deckTitle">
+					Deck
+				</div>
+				<div class="deckContent" id="charDeckContent">
+					<!-- Will be added dynamically -->
+				</div>
+			</div>
+			<div class="deck border" id="hot-swap-deck-add">
+				<div class="deckTitle">
+					Hot Swap Buffer
+				</div>
+				<div class="deckContent" id="swapDeckContent">
+					<!-- Will be added dynamically -->
+				</div>
+			</div>
+			
+			<div id="dialog-footer">
+				<button id="cancel-button" onClick="closeDialog()">Cancel</button>
+				<button id="add-cards" onClick="addCards()">Add</button>
+			</div>
+		</script>
 		
 		<script type="text/template" id="card">
 			<div class="deckCard {color} card" card="{id}">
