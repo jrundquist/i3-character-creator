@@ -230,7 +230,10 @@ function resetAll() {
 function reloadUP(){
 	character.calcSwapBuffer();
 	$('#pointsUP').html(character.totalUP);
-	$('#pointsSB').html(character.swapBuffer);
+	$('#pointsSB').html(character.swapBuffer).removeClass('negative');
+	if ( character.swapBuffer < 0 ){
+		$('#pointsSB').addClass('negative');
+	}
 }
 
 function reloadDecks(){
@@ -293,14 +296,36 @@ function reloadCharacter(){
 
 function updateDecks(){
 	var $deck = $('#charDeckContent');
-		
-	character.deck = [];
+	
+	newDeck = [];
+	// Build the deck based on 
 	$deck.children('.deckCard').each(function(index, card){
 		$card = $(card);
 		if ( $card.data('card') ){
-			character.deck.push( $card.data('card') );
+			newDeck.push( $card.data('card') );
 		}
 	});
+	
+	// Check for two race cards
+	foundRace = false;
+	for ( i in newDeck ){
+		if ( newDeck[i].cardType == 1 ){
+			if ( foundRace ){
+				for( j in character.deck ){
+					if ( character.deck[j].cardType == 1 ){
+						if ( character.deck[j].id == foundRace ){
+							// Move newDeck[i] back to sb
+						}else{
+							// Move foundRace back to sb 
+						}
+					}
+				}
+			}
+			foundRace = newDeck[i];
+		}
+	}
+	
+	character.deck = newDeck;
 	
 	// Recalculate everything based on the new card configuration
 	reloadUP();
