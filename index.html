@@ -376,8 +376,13 @@
 		<script>
 		// Check that we are not pressing enter in the box and that it meets size requirements.
 		$(document).delegate("#charName h2, #pointsUP","keydown",function(){
+			console.log($("#charName h2").html().length);
 			if ( event.keyCode == 13 ){
 				$(this).blur();
+			}
+			//Prevents the user from backspacing when the character name field is empty (if the user could, the pencil icon will drop to the next line and disappear)
+			else if($(this).html().length <= 1 && event.keyCode == 8 ){
+				$(this).html("&nbsp;")
 			}
 			// if ( ($("#charName h2").html().length > 35 && event.keyCode != 8 && event.keyCode != 46) ){
 			// 	return false;
@@ -392,7 +397,7 @@
 		 * element. 
 		 ******************/
 		$(document).delegate("#charName h2","blur",function(){
-			character.name = $(this).html().trim();
+			character.name = $(this).html().replace("&nbsp;"," ").trim();
 			character.sessionSave();
 		});
 		$(document).delegate("#charDiscTxt","blur",function(){
@@ -400,7 +405,7 @@
 			character.sessionSave();
 		});
 		$(document).delegate("#pointsUP", "blur", function(){
-			var newValue = parseFloat($(this).html().trim());
+			var newValue = parseFloat($(this).html().replace("&nbsp;"," ").trim());
 			if ( !isNaN(newValue) ){
 				character.totalUP = newValue;
 			}
