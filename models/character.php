@@ -9,6 +9,7 @@ private $currentUP;
 private $totalUP;
 private $lastModified;
 private $cards;
+private $notes;
 
 //derived stats
 private $body, $mind, $soul, $vit;
@@ -22,6 +23,7 @@ public function __construct($userid, $tempName, $tempUP){
 	$this->lastModified = date('Y-m-d'); 
 	$this->cards = array();
 	$this->setCharDesc("");
+	$this->setNotes("");
 
 	//initialize derived stats
 	$this->body = array("atk" => 0, "def" => 0, "bst" => 0);
@@ -98,6 +100,16 @@ public function setCharDesc($x) {
 //getter for character's description
 public function getCharDesc() {
 	return $this->chardesc;
+}
+
+//setter for notes
+public function setNotes($x) {
+	$this->notes = htmlentities($x);
+}
+
+//getter for notes
+public function getNotes() {
+	return $this->notes;
 }
 
 //getter for the date the character was last modified
@@ -272,6 +284,8 @@ public function getCharacter($charid, $userid) {
 	$this->__construct($userid, $newcharrep["charinfo"]["charname"], $newcharrep["charinfo"]["totalup"]);
 	$this->setCharID($charid);
 	$this->setCharDesc($newcharrep["charinfo"]["chardesc"]);
+	$this->setNotes($newcharrep["charinfo"]["notes"]);
+	
 	$this->lastModified = $newcharrep["charinfo"]["lastmodified"];
 
 	foreach($newcharrep["cards"] as $index => $cardid) {
@@ -288,6 +302,7 @@ public static function factoryChar($charid, $userid) {
 	$char = new Character($userid, $newcharrep["charinfo"]["charname"], $newcharrep["charinfo"]["totalup"]);
 	$char->setCharID($charid);
 	$char->setCharDesc($newcharrep["charinfo"]["chardesc"]);
+	$char->setNotes($newcharrep["charinfo"]["notes"]);
 	$char->lastModified = $newcharrep["charinfo"]["lastmodified"];
 
 	foreach($newcharrep["cards"] as $index => $cardid) {
@@ -299,7 +314,7 @@ public static function factoryChar($charid, $userid) {
 
 
 public function toJSON(){
-	$result = '{ "name": "'.$this->charName.'", "id": '.$this->charID.', "description": "'.$this->chardesc.'", "notes":"", "totalUP": "'.$this->totalUP.'", "swapBuffer":"'.$this->getCurrentUP().'", ';
+	$result = '{ "name": "'.$this->charName.'", "id": '.$this->charID.', "description": "'.$this->chardesc.'", "notes":"'.$this->notes.'", "totalUP": "'.$this->totalUP.'", "swapBuffer":"'.$this->getCurrentUP().'", ';
 	$result .= '"deck": '.json_encode($this->cards).', "swapDeck": [], ';
 	$result .= '"stats": { "mind": '.json_encode($this->mind).', "body": '.json_encode($this->body).', "soul": '.json_encode($this->soul).', "vitality": '.json_encode($this->vit).'} }';
 	

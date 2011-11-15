@@ -100,7 +100,7 @@ function get_cbdb_character($charid, $dbconn) {
 	if(!$dbconn) {
 		$dbconn = get_cbdb_connection();
 	}
-	$query = "select charid, charname, totalup, swapbuffer, chardesc, lastmodified from UserCharacter where charid = $charid";
+	$query = "select charid, charname, totalup, swapbuffer, chardesc, notes, lastmodified from UserCharacter where charid = $charid";
 	$result = mysql_query($query);
 	if(!$result) {
 		return False;
@@ -211,11 +211,11 @@ function save_cbdb_character($char, $userid, $dbconn) {
 	}
 	if($char->getCharID() != NULL) {
 		//Then the character already has an ID, so we simply update the table.
-		$query = "update UserCharacter set charname = '".$char->getCharName()."', lastmodified = NOW(), totalup = ".$char->getTotalUP().", swapbuffer = ".$char->getCurrentUP().", chardesc = '".$char->getCharDesc()."' where charid = ".$char->getCharID();
+		$query = "update UserCharacter set charname = '".$char->getCharName()."', lastmodified = NOW(), totalup = ".$char->getTotalUP().", swapbuffer = ".$char->getCurrentUP().", chardesc = '".$char->getCharDesc()."', notes = '".$char->getNotes()."' where charid = ".$char->getCharID();
 	}
 	else {
 		//Then we must do an insert because the character doesn't exist yet.
-		$query = "insert into UserCharacter (charname, userid, totalup, swapbuffer, chardesc, lastmodified) values('".$char->getCharName()."', '$userid', ".$char->getTotalUP().", ".$char->getCurrentUP().", '".$char->getCharDesc()."', NOW())";
+		$query = "insert into UserCharacter (charname, userid, totalup, swapbuffer, chardesc, notes, lastmodified) values('".$char->getCharName()."', '$userid', ".$char->getTotalUP().", ".$char->getCurrentUP().", '".$char->getCharDesc()."', '".$char->getNotes()."', NOW())";
 	}
 	$result = mysql_query($query);
 	if(!$result) {
