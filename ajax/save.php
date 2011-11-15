@@ -62,6 +62,7 @@ if ( isset($char->id) ){
 	
 	$existingChar->setCharName($char->name);
 	$existingChar->setCharDesc($char->description);
+	$existingChar->setNotes($char->notes);
 	$existingChar->setTotalUP($char->totalUP);
 	$existingChar->setCurrentUP($char->swapBuffer);
 	
@@ -71,6 +72,7 @@ if ( isset($char->id) ){
 }else{
 	$character = new Character($userid, $char->name, $char->totalUP);
 	$character->setCharDesc($char->description);
+	$character->setNotes($char->notes);
 	$character->setCurrentUP($char->swapBuffer);
 	if ( $char->deck ){
 		foreach( $char->deck as $cardId ){
