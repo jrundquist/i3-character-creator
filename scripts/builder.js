@@ -99,6 +99,9 @@ Character.prototype.sessionSave = function(){
 
 
 
+
+
+
 /*************************
  * Global Variables
  * 
@@ -115,6 +118,10 @@ if ( sessionStorage && sessionStorage.character ){
 	}
 }
 resetAll();
+
+
+
+
 
 
 
@@ -163,18 +170,49 @@ function save(){
 
 // New dialog call
 function newChar(){
-	
-	$.ajax({	url:'/ajax/new.php',
-				dataType:'json',
-				success: function(j){
-					if ( j == true ){
-						character = new Character;
-						resetAll();
-					}else{
-						alert("ERRORRRRR");
-					}
+	$.ajax({url:'/ajax/new.php',
+			dataType:'json',
+			success: function(j){
+				if ( j == true ){
+					character = new Character;
+					resetAll();
+				}else{
+					alert("ERRORRRRR");
 				}
+			}
+		});
+}
+
+// Delete character call
+//  -- fade out the selected character, and then make call to server
+function deleteChar(){
+	$this = $('.loadable-character.chosen');
+
+	if ( $this.length == 0 ){ // If the user hasn't chosen anything return
+		return false;
+	}
+	
+	$this.fadeOut();	// Hide the selected character
+	
+	characterShort = $this.data('character');
+	if ( characterShort ){
+		// If we are deleting the currently loaded character, then unset the 
+		//  client side ID becuase this is technically now a new character
+		if (characterShort.charid == character.id){
+			character.id = undefined;
+		}
+		
+		// Make the call to the delete script to delete the character
+		$.ajax({	url:'/ajax/delete.php',
+		 			type: "POST",
+					cache: false,	// Dont cache this call
+					data: {id : characterShort.charid},
+					dataType: "json",
+					success: function(charaterLoaded){ 
+						console.log('Character Deleted');
+					}
 			});
+	}
 }
 
 // Ad card dialog
@@ -201,26 +239,22 @@ function doAddCard(){
 	console.log(where);
 	for ( i=0; i< $list.length; i++ ){
 		card = $($list[i]).data('card');
-		console.log('i see', card);
 		if ( $('.deckCard[card="'+card.id+'"]').length == 0 ){	// Uniqueness check
 			if ( where == 'char' ){
 				character.deck.push(card);
-				reloadDecks();
-				reloadUP();
 			}else{
-				console.log('adding', card);
 				character.swapDeck.push(card);
-				reloadDecks();
 			}
 		}
 		
 	}
+	
+	reloadDecks();
 	reloadStats();
+	reloadUP();
+	
 	closeDialog();
-	// simply add cards to correct character.deck list
-	// THen class reloadDeck , UP, and stats (  only stats if where == char )
 }
-
 
 // This is the dialog for loading characters
 function loadChar(){
@@ -239,14 +273,15 @@ function loadChar(){
 			});
 }
 
-// This is the function that is called when a character needs to be loaded
+// This is the function that is called when a character has been 
+//  selected to be loaded
 function doLoad(){
 	$this = $('.loadable-character.chosen');
 	if ( $this.length == 0 ){
 		return false;
 	}
 	characterShort = $this.data('character');
-	if ( character ){
+	if ( characterShort ){
 		$.ajax({	url:'/ajax/load.php',
 		 			type: "POST",
 					data: {id : characterShort.charid},
@@ -263,6 +298,11 @@ function doLoad(){
 	}
 	
 }
+
+
+
+
+
 
 
 /*************************
@@ -289,14 +329,15 @@ function reloadUP(){
 }
 
 function reloadDecks(){
-	// Clear the decks
 	var $deck = $('#charDeckContent'),
 		$swapDeck = $('#swapDeckContent'),
 		template = $('script[type="text/template"]#card').html();
 	
+	// Clear the decks
 	$deck.empty();
 	$swapDeck.empty();
 	
+	// Populate character deck
 	for(card in character.deck){
 		thisCard = template .replace('{color}', cardColor[character.deck[card].cardType])
 							.replace('{id}', character.deck[card].id)
@@ -305,7 +346,7 @@ function reloadDecks(){
 		$(thisCard).appendTo($deck).data('card', character.deck[card]);
 	}
 	
-	
+	// Populate swap deck
 	for(card in character.swapDeck){
 		thisCard = template .replace('{color}', cardColor[character.swapDeck[card].cardType])
 							.replace('{id}', character.swapDeck[card].id)
@@ -316,11 +357,12 @@ function reloadDecks(){
 }
 
 function reloadStats() {
-	
+	// Recalulate stats based on decks
 	character.calcStats();
 	// loops through the stats of the character
 	for( aspect in character.stats ){
 			for( bonus in character.stats[aspect] ){
+				// Update the display
 				$('.statNum.'+aspect+'.'+bonus).html(character.stats[aspect][bonus]);
 			}
 		}
@@ -353,44 +395,23 @@ function reloadCharacter(){
 	
 }
 
-
+// Update the 
 function updateDecks(){
 	var $deck = $('#charDeckContent'),
 		$swapDeck = $('#swapDeckContent'),
 		$trashDeck = $('#trash-overlay').empty();
 	
-	newDeck = [];
-	// Build the deck based on 
+	// Build the stored deck based on the DOM eleemnts in the decks
+	character.deck = [];
 	$deck.children('.deckCard').each(function(index, card){
 		$card = $(card);
 		if ( $card.data('card') ){
-			newDeck.push( $card.data('card') );
+			character.deck.push( $card.data('card') );
 		}
 	});
 	
-	// Check for two race cards
-	foundRace = false;
-	for ( i in newDeck ){
-		if ( newDeck[i].cardType == 1 ){
-			if ( foundRace ){
-				for( j in character.deck ){
-					if ( character.deck[j].cardType == 1 ){
-						if ( character.deck[j].id == foundRace ){
-							// Move newDeck[i] back to sb
-						}else{
-							// Move foundRace back to sb 
-						}
-					}
-				}
-			}
-			foundRace = newDeck[i];
-		}
-	}
-	
-	character.deck = newDeck;
-	
+	// Build the swap deck based on the DOM eleemnts in the decks
 	character.swapDeck = [];
-	// Build the swap deck based on the existing
 	$swapDeck.children('.deckCard').each(function(index, card){
 		$card = $(card);
 		if ( $card.data('card') ){
