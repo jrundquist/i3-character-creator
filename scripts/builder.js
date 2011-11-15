@@ -49,8 +49,8 @@ Character.prototype.name = "[Character Name]";
 Character.prototype.id = null;
 Character.prototype.totalUP = 0;
 Character.prototype.swapBuffer = 0;
-Character.prototype.description = null;
-Character.prototype.notes = null;
+Character.prototype.description = "";
+Character.prototype.notes = "";
 Character.prototype.deck = [];
 Character.prototype.swapDeck = [];
 Character.prototype.stats = new Stats();
@@ -130,9 +130,23 @@ function viewCard(cardId){
 
 // Save character call
 function save(){
-	character; // <-- Save this on the server 
-			   //     HINT: start by POSTing it to the server using $.ajax
-	openDialog('save');
+	openDialog('saving');
+	$.ajax({url:'/ajax/save.php',
+			dataType: "json",
+			type: "POST",
+			data: {'char': JSON.stringify(character) },
+			success: function(result){
+				if ( result.success ){
+					openDialog('saved');
+				}else{
+					alert(result.info);
+					hideOverlay();
+				}
+			},
+			error: function(jqXHR, textStatus, errorThrown){
+				hideOverlay();
+			}
+		});
 }
 
 // New dialog call

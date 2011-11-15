@@ -31,6 +31,15 @@ $(document).delegate("#close-button, #dialog-wrapper, #dialog-close","click",fun
 /***
  * Callable functions 
  */
+function showOverlay(){
+	$('#dialog-wrapper').hide();
+	$('#dialog-overlay').fadeIn();
+}
+function hideOverlay(){
+	$('#dialog-wrapper').hide();
+	$('#dialog-overlay').fadeOut();
+}
+
 function openDialog(url, specialClass){
 	
 	// If we dont have a dialog yet, make one
@@ -39,8 +48,7 @@ function openDialog(url, specialClass){
 	}
 
 	// Prepare to show the dialog ( hide the dialog and show the fadeout background )
-	$('#dialog-wrapper').hide();
-	$('#dialog-overlay').fadeIn();
+	showOverlay();
 
 	$('#dialog-container').attr('class', specialClass);
 
@@ -65,8 +73,7 @@ function openDialog(url, specialClass){
 }
 
 function closeDialog(){
-	$('#dialog-wrapper').hide();
-	$('#dialog-overlay').fadeOut();
+	hideOverlay();
 	$('#dialog-container').removeAttr('class');
 	
 }

@@ -270,9 +270,15 @@
 			<p>Here we should write up something that would help the user. Maybe describe some stuff?</p>
 		</script>
 
-		<script type="text/template" id="_save">
+		<script type="text/template" id="_saved">
 			<h1>Character Saved</h1>
-			<p>Here we should write up something that would help the user. Maybe describe some stuff?</p>
+			<p>Your character has been saved!</p>
+		</script>
+		
+		<script type="text/template" id="_saving">
+			<h1>Saving </h1>
+			<p>Please Wait</p>
+			<div id="dialog-footer">...</div>
 		</script>
 		
 		<script type="text/template" id="_load">
@@ -375,6 +381,8 @@
 		// Sets the cards to be sortable / draggable
 		$(".deckContent").sortable({
 			connectWith: ".deckContent",
+			appendTo: "#decks",
+			helper: "clone",
 			start: function(event,ui){
 				showTrash();
 			},
@@ -385,12 +393,14 @@
 				updateDecks();
 				return true;
 			},
-			
+			cancel: 'disabled',
 			cursor: 'move',
-			zIndex: 5000
+			zIndex: 5000,
 		}).disableSelection();
 		
-		
+		$(".deckContent").scroll(function(e, el){
+			$(this).scrollLeft(0);
+		});
 		
 		// This sets the onclick action in the loading dialog box
 		/// It shows the card preview based on the selected character.
