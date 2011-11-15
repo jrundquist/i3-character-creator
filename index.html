@@ -35,12 +35,12 @@
 				<section class="row">
 					<section id="charInfo">
 						<div id="cardImgHolder" class="border">
-							<img class="card" id="cardImg" card="01-19-10" src="images/card.jpg">
+							<img class="card" id="cardImg" card="" src="images/unknown.png">
 						</div>
 						<div id="charDisc" class="border">
 							<h3>Character Bio</h3>
 							<p contenteditable id="charDiscTxt">
-								Cupcake ipsum dolor sit amet I love. Liquorice soufflé muffin tootsie roll. Candy cheesecake I love gingerbread marzipan gingerbread topping bear claw I love. Muffin tiramisu carrot cake sweet roll gummies powder sweet cheesecake fruitcake. Cake caramels apple pie apple pie. I love dragée I love jelly-o I love I love. Muffin tiramisu I love liquorice toffee. Tootsie roll I love cheesecake chocolate chocolate jelly beans applicake I love lemon drops. I love wafer marzipan cotton candy chocolate bar wafer. Powder bonbon sesame snaps cotton candy oat cake chocolate cake. Marzipan fruitcake sweet roll marshmallow soufflé. Powder croissant bear claw I love sweet roll I love fruitcake cheesecake faworki.
+								
 							</p>
 						</div>
 					</section>
@@ -119,7 +119,7 @@
 							total UP
 						</div>
 						<div contenteditable class="pointsVal" id="pointsUP">
-							500
+							0
 						</div>
 					</div>
 					<div class="pointCount border" id="buffer-points">
@@ -128,7 +128,7 @@
 							swap buffer
 						</div>
 						<div class="pointsVal" id="pointsSB">
-							500
+							0
 						</div>
 					</div>
 				</section>
@@ -147,32 +147,6 @@
 						</div>
 						<div class="deckContent" id="charDeckContent">
 							<!-- Will be added dynamically -->
-							<div class="deckCard red">
-								<div class="cardCost">
-									3
-								</div>
-								<div class="cardName">
-									Kill Roller
-								</div>
-							</div>
-							<div class="deckCard yellow">
-								<div class="cardCost">
-									2
-								</div>
-								<div class="cardName">
-									Body 1
-								</div>
-							</div>
-							<div class="deckCard blue">
-								<div class="cardCost">
-									12
-								</div>
-								<div class="cardName">
-									Mind Lash
-								</div>
-							</div>
-							<!-- END Dynamic additions -->
-							
 						</div>
 					</div>
 					<div class="deck border" id="hot-swap-deck">
@@ -181,33 +155,7 @@
 							<button onclick="addCard('swap')" class="addCard" id="add-hot-swap-card">+</button>
 						</div>
 						<div class="deckContent" id="swapDeckContent">
-							<!-- Will be added dynamically -->	
-							<div class="deckCard red">
-								<div class="cardCost">
-									5
-								</div>
-								<div class="cardName">
-									I'na Twilight
-								</div>
-							</div>
-							<div class="deckCard yellow">
-								<div class="cardCost">
-									2
-								</div>
-								<div class="cardName">
-									Mind 1
-								</div>
-							</div>
-							<div class="deckCard blue">
-								<div class="cardCost">
-									8
-								</div>
-								<div class="cardName">
-									Mind Probe
-								</div>
-							</div>
-							<!-- END Dynamic additions -->
-							
+							<!-- Will be added dynamically -->
 						</div>
 					</div>
 				</section>
@@ -350,6 +298,23 @@
 			</div>
 		</script>
 		
+		<script type="text/template" id="card">
+			<div class="deckCard {color} card" card="{id}">
+				<div class="cardCost">
+					{cost}
+				</div>
+				<div class="cardName">
+					{name}
+				</div>
+			</div>
+		</script>
+		
+		
+		
+		
+		
+		
+		
 		<!-- Javascript -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
@@ -359,9 +324,12 @@
 		<script>
 		// Check that we are not pressing enter in the box and that it meets size requirements.
 		$(document).delegate("#charName h2, #pointsUP","keydown",function(){
-			if (event.keyCode == 13 || ($("#charName h2").html().length > 35 && event.keyCode != 8 && event.keyCode != 46) ){
-				return false;
+			if ( event.keyCode == 13 ){
+				$(this).blur();
 			}
+			// if ( ($("#charName h2").html().length > 35 && event.keyCode != 8 && event.keyCode != 46) ){
+			// 	return false;
+			// }
 		});
 		
 		/******************
@@ -373,16 +341,22 @@
 		 ******************/
 		$(document).delegate("#charName h2","blur",function(){
 			character.name = $(this).html().trim();
+			character.sessionSave();
 		});
 		$(document).delegate("#charDiscTxt","blur",function(){
 			character.description = $(this).html().trim();
+			character.sessionSave();
 		});
 		$(document).delegate("#pointsUP", "blur", function(){
 			var newValue = parseFloat($(this).html().trim());
-			if ( newValue > 0 ){
+			if ( !isNaN(newValue) ){
 				character.totalUP = newValue;
 			}
 			reloadUP();
+		});
+		$(document).delegate("#notesText", "blur", function(){
+			character.notes = $(this).html().trim();
+			character.sessionSave();
 		});
 		
 		
@@ -407,6 +381,11 @@
 			stop: function(event,ui){
 				hideTrash();
 			},
+			update: function(event, ui) {
+				updateDecks();
+				return true;
+			},
+			
 			cursor: 'move',
 			zIndex: 5000
 		}).disableSelection();

@@ -63,10 +63,10 @@ if(isset($_REQUEST['type'])) {
 				echo '
 				<h1>'.preg_replace('%\[\d+\]%', '', $toret['listname']).'</h1>
 				<div class="card-container">
-					<img id="front-card" class="bigImg" src="card-images/'.$toret['backimg'].'"/>
+					<img id="front-card" class="bigImg" src="http://testcb.untoldthegame.com/Version1.3/card_imgs/'.$toret['backimg'].'"/>
 				</div>
 				<div class="card-container">
-					<img id="back-card"  class="bigImg" src="card-images/'.$toret['frontimg'].'"/>
+					<img id="back-card"  class="bigImg" src="http://testcb.untoldthegame.com/Version1.3/card_imgs/'.$toret['frontimg'].'"/>
 				</div>';
 				
 			}
