@@ -109,23 +109,6 @@ function get_cbdb_character($charid, $dbconn) {
 	//Must also get the correlated cards.
 	$query = "select cardid from CharacterCards where charid = $charid";
 
-
-/*
-	$query = "SELECT a.cardid FROM `untol1_testcb`.`CharacterCards` as a";
-	$query .= " inner join untol1_testcb.cards_lu as b";
-	$query .= " where charid = $charid";
-	$query .= " and a.cardid = b.full_id";
-	$query .= " and (b.type = '1' or b.type = '2' or b.type = '3')";
-*/
-
-
-
-
-
-
-
-
-
 	$result = mysql_query($query);
 	if(!$result) {
 		return False;

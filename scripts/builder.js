@@ -144,7 +144,7 @@ function hideTrash(){
 }
 
 function viewCard(cardId){
-	openDialog('ajax/card_controller.php?type=get_typeimgsname&cardId='+cardId, 'wide');
+	openDialog('ajax/cards.php?id='+cardId, 'wide');
 }
 
 // Save character call
@@ -378,13 +378,15 @@ function reloadCharacter(){
 	for( card in character.deck ){
 		// If we find one, set the character image to the card's image
 		if ( character.deck[card].cardType == '1' ){
-			$('img#cardImg').attr('src','http://testcb.untoldthegame.com/Version1.3/card_imgs/'+character.deck[card].backpic);
+			$('img#cardImg').attr('src','http://testcb.untoldthegame.com/Version1.3/card_imgs/'+character.deck[card].backpic)
+							.attr('card', character.deck[card].id)
+							.addClass('card');
 			race = true;
 		}
 	}
 	// If we dont have a race card in the deck, show the missing image
 	if ( !race ){
-		$('img#cardImg').attr('src', 'images/unknown.png');
+		$('img#cardImg').attr('src', 'images/unknown.png').removeClass('card');
 	}
 		
 	// Description
