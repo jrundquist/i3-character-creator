@@ -1,0 +1,76 @@
+﻿/* TEAM 3*/
+Project Manager: Mikhael Ravula
+
+Managing Editor: Ira Kaplan
+
+Writer: Taabish Rashied
+
+Writer: Ruobin Ling
+
+Graphic Designer: Joseph Kim
+
+Programmer: James Rundquist 
+Website: http://jamesrundquist.com/
+Twitter: @jamesrundquist
+
+Programmer: Greg Cobb
+Website: http://gregthecobb.com/
+Twitter: @gregmcobb
+
+Programmer: Taeyoung Kim  
+
+Programmer: John Bieniek
+
+
+/* TEAM 2*/
+Project Manager: Jason Molargik
+
+Managing Editor: Courtney McCormick
+
+Writer: Christopher Trimble
+
+Writer: Vladimir Grantcharov
+
+Graphic Designer: William Grier
+
+Programmer: Andrew Monroe
+
+Programmer: Irfan Somani
+
+Programmer: Nigel Lawrence
+
+
+/* TEAM 1*/
+Project Manager: Aaron Goldsmith
+Linkedin: http://www.linkedin.com/in/aarongoldsmith
+
+Managing Editor: Krishna Masoor
+
+Writer & Programmer: Enrique Santos
+Site: http://www.enriquesantos.net/
+
+Graphic Designer: Hassan Khokhar
+
+Graphic Designer: Elizabeth LeMar
+Linkedin: http://www.linkedin.com/pub/elizabeth-lemar/32/a61/243
+
+Programmer: Robert Basilio
+Linkedin: http://www.linkedin.com/pub/robert-basilio/32/a63/792
+
+Programmer: George Chen
+
+Programmer: Sean Chiem
+Facebook: https://www.facebook.com/profile.php?id=1218266014
+
+Programmer: Robert Loftin
+
+
+/* THANKS */
+Chris Ritter
+Website: http://www.cjritter.com/
+
+
+/* SITE */
+Standards: HTML5, CSS3, PHP5, Javascript
+Components: jQuery
+Software: TextMate, Sublime Text 2
