@@ -480,3 +480,18 @@ body{
 	margin-left:440px;
 }
  
+
+
+footer{
+	margin: 50px auto;
+	width: 860px;
+	height: 100px;
+}
+footer .logos{
+	float: right;
+	text-align: right;
+}
+footer .logos a{
+	display: block;
+	margin: 0 0 5px 0;
+}
