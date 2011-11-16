@@ -399,7 +399,11 @@ function reloadCharacter(){
 function updateDecks(){
 	var $deck = $('#charDeckContent'),
 		$swapDeck = $('#swapDeckContent'),
-		$trashDeck = $('#trash-overlay').empty();
+		$trashDeck = $('#trash-overlay');
+	
+	// Delete the cards from trash so that they are not seen as existing in the 
+	//  decks when the "add card" script is called. 
+	$trashDeck.children('.deckCard').each(function(index, card){$(card).remove();});
 	
 	// Build the stored deck based on the DOM eleemnts in the decks
 	character.deck = [];

@@ -446,22 +446,22 @@
 				card = $card.data('card');
 				deckId = $card.parent().attr('id');
 				if ( ui.sender[0].id == 'swapDeckContent' && card.cardType == 1 ){
-					for( card in character.deck ){
-						if ( character.deck[card].cardType == 1 ){
-							// Prevent card from being dropped 
-							console.log('Trying to stop from being dropped because', character.deck[card]);
+					for( i in character.deck ){
+						/** 
+						 * Because of the way jquery calls recieve, we have to 
+						 * check to insure the card is not conflicting with itslef
+						 */
+						if ( character.deck[i].cardType == 1 && character.deck[i].id != card.id){ 
 							$(ui.sender).sortable('cancel');
 						}
 					}
 				}
 			},
-			
 			update: function(event, ui) {
 				updateDecks();
-				return true;
+				hideTrash();
 			},
-			cancel: 'disabled',
-			cursor: 'move',
+			cursor: 'pointer',
 			zIndex: 5000,
 		}).disableSelection();
 		
