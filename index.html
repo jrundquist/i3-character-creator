@@ -275,7 +275,6 @@
 		<script>
 		// Check that we are not pressing enter in the box and that it meets size requirements.
 		$(document).delegate("#charName h2, #pointsUP","keydown",function(){
-			console.log($("#charName h2").html().length);
 			if ( event.keyCode == 13 ){
 				$(this).blur();
 			}
@@ -394,7 +393,6 @@
 			// Show image
 			card = $this.data('card');
 			if ( card ){
-				console.log(card);
 				if ( card.picture ){
 					$('#add-card-image img').attr('src', 'http://testcb.untoldthegame.com/card_imgs/'+card.backpic);
 				}else{
