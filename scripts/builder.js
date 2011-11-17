@@ -395,7 +395,7 @@ function reloadCharacter(){
 	for( card in character.deck ){
 		// If we find one, set the character image to the card's image
 		if ( character.deck[card].cardType == '1' ){
-			$('img#cardImg').attr('src','http://testcb.untoldthegame.com/Version1.3/card_imgs/'+character.deck[card].backpic)
+			$('img#cardImg').attr('src','http://testcb.untoldthegame.com/card_imgs/'+character.deck[card].backpic)
 							.attr('card', character.deck[card].id)
 							.addClass('card');
 			race = true;
