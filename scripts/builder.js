@@ -240,10 +240,26 @@ function doAddCard(){
 	for ( i=0; i< $list.length; i++ ){
 		card = $($list[i]).data('card');
 		if ( $('.deckCard[card="'+card.id+'"]').length == 0 ){	// Uniqueness check
-			if ( where == 'char' ){
-				character.deck.push(card);
-			}else{
-				character.swapDeck.push(card);
+			if(where == 'char' && card.cardType == 1){
+				//Checks for multiple race cards on add
+				reject = false;
+				for(i in character.deck){
+					if(character.deck[i].cardType == 1){
+						reject = true;
+						break;
+					}
+				}
+				if (!reject){
+					character.deck.push(card);
+				}
+			}		
+			else{
+				//Normal Case
+				if ( where == 'char' ){
+					character.deck.push(card);
+				}else{
+					character.swapDeck.push(card);
+				}
 			}
 		}
 		
