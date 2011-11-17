@@ -252,6 +252,7 @@ function doAddCard(){
 	reloadDecks();
 	reloadStats();
 	reloadUP();
+	reloadCharacter();
 	
 	closeDialog();
 }
