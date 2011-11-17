@@ -209,7 +209,7 @@ function deleteChar(){
 					data: {id : characterShort.charid},
 					dataType: "json",
 					success: function(charaterLoaded){ 
-						console.log('Character Deleted');
+						//console.log('Character Deleted');
 					}
 			});
 	}
@@ -236,7 +236,6 @@ function addCard(deck){
 function doAddCard(){
 	var where = $('#add-cards-to-deck').attr('where'),
 		$list = $('.loadable-card.chosen');
-	console.log(where);
 	for ( i=0; i< $list.length; i++ ){
 		card = $($list[i]).data('card');
 		if ( $('.deckCard[card="'+card.id+'"]').length == 0 ){	// Uniqueness check
