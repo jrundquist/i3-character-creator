@@ -278,6 +278,7 @@ function loadChar(){
 	
 	$.ajax({	url:'/ajax/load.php',
 				dataType:'json',
+				cache: false,
 				success: function(j){
 					$list = $('#character-list').empty();
 					for(i=0; i<j.length; i++){

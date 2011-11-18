@@ -126,6 +126,9 @@ body{
 		font-family: "IconicStroke";
 		content: "               p";	
 	}
+	body.ie #charDisc p:after{
+		content: "";
+	}
 #stats{
 	height: 215px;
 	width: 416px;
@@ -192,6 +195,9 @@ body{
 	#pointsUP:after{
 		font-family: "IconicStroke";
 		content: "               p";	
+	}
+	body.ie #pointsUP:after{
+		content: "";
 	}
 	#pointsSB{
 	}
@@ -341,7 +347,9 @@ body{
 		font-family: "IconicStroke";
 		content: "               p";	
 	}
-	
+	body.ie #notes p:after{
+		content: "";
+	}
 	
 /******************************
  * Dialogs
@@ -481,6 +489,9 @@ body{
 }
  
 
+a img{
+	border: none;
+}
 
 footer{
 	margin: 50px auto;
