@@ -347,7 +347,7 @@ body{
 		font-family: "IconicStroke";
 		content: "               p";	
 	}
-	body.ie #notes p:after{
+	body.ie > #notes p:after{
 		content: "";
 	}
 	
