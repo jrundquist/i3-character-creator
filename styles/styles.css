@@ -303,6 +303,9 @@ body{
 			position: relative;
 			left: 5px;
 		}
+		.swapType{
+			
+		}
 #trash-overlay{
 	position: fixed;
 	top: 0;

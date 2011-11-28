@@ -356,11 +356,12 @@ function reloadDecks(){
 	
 	// Populate character deck
 	for(card in character.deck){
-		// console.log(character.deck[card]);
+		console.log(character.deck[card]);
 		thisCard = template .replace('{color}', cardColor[character.deck[card].cardType])
 							.replace('{id}', character.deck[card].id)
 							.replace('{name}', character.deck[card].name)
-							.replace('{cost}', character.deck[card].cost);
+							.replace('{cost}', character.deck[card].cost)
+							.replace('{swap}', character.deck[card].swapType);
 		$(thisCard).appendTo($deck).data('card', character.deck[card]);
 	}
 	
