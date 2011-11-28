@@ -290,9 +290,10 @@ body{
 			display: block;
 			padding: 0px 8px;
 			font-size: 26px;
-			border-right: #888 solid 2px;
+			border-left: #888 solid 2px;
 			width: 40px;
 			position: absolute;
+			left: 343px;
 			text-align: center;
 		}
 		.cardName{
@@ -300,7 +301,7 @@ body{
 			padding: 0px 8px;
 			font-size: 26px;
 			position: relative;
-			left: 70px;
+			left: 5px;
 		}
 #trash-overlay{
 	position: fixed;

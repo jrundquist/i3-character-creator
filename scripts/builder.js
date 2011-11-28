@@ -356,6 +356,7 @@ function reloadDecks(){
 	
 	// Populate character deck
 	for(card in character.deck){
+		// console.log(character.deck[card]);
 		thisCard = template .replace('{color}', cardColor[character.deck[card].cardType])
 							.replace('{id}', character.deck[card].id)
 							.replace('{name}', character.deck[card].name)
