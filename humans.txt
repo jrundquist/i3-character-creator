@@ -1,5 +1,6 @@
 ﻿/* TEAM 3*/
 Project Manager: Mikhael Ravula
+Email: rmike05@gmail.com
 
 Managing Editor: Ira Kaplan
 
@@ -8,6 +9,7 @@ Writer: Taabish Rashied
 Writer: Ruobin Ling
 
 Graphic Designer: Joseph Kim
+Email: josephgkim1221@gmail.com
 
 Programmer: James Rundquist 
 Website: http://jamesrundquist.com/
@@ -20,6 +22,7 @@ Twitter: @gregmcobb
 Programmer: Taeyoung Kim  
 
 Programmer: John Bieniek
+Email: johnBieniek@gmail.com
 
 
 /* TEAM 2*/
@@ -68,6 +71,9 @@ Programmer: Robert Loftin
 /* THANKS */
 Chris Ritter
 Website: http://www.cjritter.com/
+
+Georgia Tech
+Website: www.gatech.edu
 
 
 /* SITE */

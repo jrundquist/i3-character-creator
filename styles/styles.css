@@ -101,6 +101,7 @@ body{
 		left: -18px;
 		top: -20px;
 		height: 255px;
+		cursor: pointer;
 	}
 #charDisc{
 	height: 215px;
