@@ -9,8 +9,9 @@ body{
 }
 	#header h1{
 		position: relative;
-		top: 47px;
+		top: 12px;
 		font-size: 40px;
+		float: left;
 	}
 	#header nav{
 		float: right;
@@ -23,6 +24,8 @@ body{
 	margin: 0 auto;
 	width: 860px;
 	clear:both;
+	position:relative;
+	top: -18px;
 }
 .content:after{
 	content:"";
