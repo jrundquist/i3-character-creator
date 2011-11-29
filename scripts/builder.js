@@ -226,7 +226,7 @@ function addCard(deck){
 					$list = $('#deck-cards-list').empty();
 					for( i in cards ){
 						card = cards[i];
-						$added = $('<div id="card-'+card.card.id+'" class="loadable-card '+cardColor[card.card.cardType]+'">'+card.card.cost+' | '+card.name+'</div>').appendTo($list).data('card', card.card);
+						$added = $('<div id="card-'+card.card.id+'" class="loadable-card '+cardColor[card.card.cardType]+'">'+card.name + '<div class="addCardCost">' +card.card.cost+'</div></div>').appendTo($list).data('card', card.card);
 					}
 				}
 			});
@@ -356,7 +356,7 @@ function reloadDecks(){
 	
 	// Populate character deck
 	for(card in character.deck){
-		console.log(character.deck[card]);
+		// console.log(character.deck[card]);
 		thisCard = template .replace('{color}', cardColor[character.deck[card].cardType])
 							.replace('{id}', character.deck[card].id)
 							.replace('{name}', character.deck[card].name)
@@ -370,7 +370,8 @@ function reloadDecks(){
 		thisCard = template .replace('{color}', cardColor[character.swapDeck[card].cardType])
 							.replace('{id}', character.swapDeck[card].id)
 							.replace('{name}', character.swapDeck[card].name)
-							.replace('{cost}', character.swapDeck[card].cost);
+							.replace('{cost}', character.swapDeck[card].cost)
+							.replace('{swap}', character.swapDeck[card].swapType);
 		$(thisCard).appendTo($swapDeck).data('card', character.swapDeck[card]);
 	}
 }
