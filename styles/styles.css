@@ -3,7 +3,7 @@ body{
 	margin: 10px 10px 30px;
 }
 
-/*Header Stuff*/
+/*Page Header*/
 #header{
 	width: 100%;
 }
@@ -20,6 +20,7 @@ body{
 		float: left;
 	}
 
+/*Page Content*/
 #content{
 	margin: 0 auto;
 	width: 860px;

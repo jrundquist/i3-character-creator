@@ -1,4 +1,11 @@
 /***
+*
+* This file handles the dialog windows the site.
+*
+*/
+
+
+/***
  * Setup Functions
  */
 function initElements(){
