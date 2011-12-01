@@ -291,6 +291,7 @@ body{
 		.cardCost{
 			display: block;
 			padding: 0px 8px;
+			margin-top: 8px;
 			font-size: 26px;
 			border-left: #888 solid 2px;
 			width: 40px;
