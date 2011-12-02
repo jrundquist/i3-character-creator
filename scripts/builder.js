@@ -391,7 +391,7 @@ function reloadStats() {
 
 function reloadCharacter(){
 	// Name
-	$('#charName h2').html(character.name);
+	$('#charName h2').html(unescape(character.name));
 	var race = false;
 	
 	// Search the deck for a race card
@@ -410,10 +410,10 @@ function reloadCharacter(){
 	}
 		
 	// Description
-	$('#charDiscTxt').html(character.description);
+	$('#charDiscTxt').html(unescape(character.description));
 	
 	// Notes
-	$('#notesText').html(character.notes);
+	$('#notesText').html(unescape(character.notes));
 	
 }
 

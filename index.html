@@ -357,11 +357,11 @@
 		 * element. 
 		 ******************/
 		$(document).delegate("#charName h2","blur",function(){
-			character.name = $(this).html().replace("&nbsp;"," ").trim();
+			character.name = escape($(this).html().replace("&nbsp;"," ").trim());
 			character.sessionSave();
 		});
 		$(document).delegate("#charDiscTxt","blur",function(){
-			character.description = $(this).html().trim();
+			character.description = escape($(this).html().trim());
 			character.sessionSave();
 		});
 		$(document).delegate("#pointsUP", "blur", function(){
@@ -372,7 +372,7 @@
 			reloadUP();
 		});
 		$(document).delegate("#notesText", "blur", function(){
-			character.notes = $(this).html().trim();
+			character.notes = escape($(this).html().trim());
 			character.sessionSave();
 		});
 		
