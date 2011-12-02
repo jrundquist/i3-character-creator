@@ -268,7 +268,7 @@ class Character{
 	//When this function is called, should likely null out
 	//the object as well to discourage further interaction with
 	//the character.
-	public function l() {
+	public function delCharacter() {
 		delete_cbdb_character($this->getCharID(), $this->getUserID(), get_cbdb_connection());
 		unset($this);
 	}

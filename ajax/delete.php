@@ -12,6 +12,9 @@ $charId = filter_input(INPUT_POST, 'id');
 $existingChar = Character::factoryChar($charId, $userid);
 if ( $existingChar->getUserID() == $userid ){
 	$existingChar->delCharacter();
+	echo json_encode(array('success'=>true, 'info'=>'Delete'));
+}else{
+	echo json_encode(array('success'=>false, 'info'=>'Character Owner'));
 }
 
 ?>
