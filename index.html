@@ -4,7 +4,7 @@
 	<head>
 		<title>Untold the Game | Character Builder</title>
 		<meta charset="utf-8"/>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		
 		<!--[if lt IE 9]>
@@ -18,6 +18,34 @@
 		<link rel="stylesheet" type="text/css" href="styles/iconic.css" />
 	</head>
 	<body>
+	<!--[if IE]>
+    <script type="text/javascript" 
+     src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+
+    <style>
+     .chromeFrameInstallDefaultStyle {
+       width: 100%; /* default is 800px */
+       border: 5px solid blue;
+     }
+    </style>
+
+    <div id="prompt">
+     <!-- if IE without GCF, prompt goes here -->
+    </div>
+ 
+    <script>
+     // The conditional ensures that this code will only execute in IE,
+     // Therefore we can use the IE-specific attachEvent without worry
+     window.attachEvent("onload", function() {
+       CFInstall.check({
+         mode: "overlay", // the default
+         node: "prompt"
+       });
+     });
+    </script>
+  	<![endif]-->
+
+
 		<section id="header">
 			<nav id="navigation">
 				<a href="#help" onClick="openDialog('help');return false;">help</a> | 
