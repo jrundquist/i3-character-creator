@@ -52,6 +52,8 @@ if ( isset($char->id) ){
 	
 	// Add the cards nessisary
 	foreach( $cardsToAdd as $cardId ){
+		if ( is_object($cardId) )
+			$cardId = $cardId->id;
 		$card = new Card($cardId);
 		$existingChar->addCard($card);
 	}
@@ -79,6 +81,8 @@ if ( isset($char->id) ){
 	$character->setCurrentUP($char->swapBuffer);
 	if ( $char->deck ){
 		foreach( $char->deck as $cardId ){
+			if ( is_object($cardId) )
+				$cardId = $cardId->id;
 			$card = new Card($cardId);
 			$character->addCard($card);
 		}

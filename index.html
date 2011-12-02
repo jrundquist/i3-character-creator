@@ -357,7 +357,7 @@
 		 * element. 
 		 ******************/
 		$(document).delegate("#charName h2","blur",function(){
-			character.name = escape($(this).html().replace("&nbsp;"," ").trim());
+			character.name = $(this).html().replace("&nbsp;"," ").trim();
 			character.sessionSave();
 		});
 		$(document).delegate("#charDiscTxt","blur",function(){
