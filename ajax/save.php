@@ -51,11 +51,9 @@ if ( isset($char->id) ){
 	}
 	
 	// Add the cards nessisary
-	foreach( $char->deck as $cardId ){
-		if ( in_array($cardId, $cardsToAdd) ){
-			$card = new Card($cardId);
-			$existingChar->addCard($card);
-		}
+	foreach( $cardsToAdd as $cardId ){
+		$card = new Card($cardId);
+		$existingChar->addCard($card);
 	}
 	
 	// Update the character information
@@ -66,8 +64,13 @@ if ( isset($char->id) ){
 	$existingChar->setTotalUP($char->totalUP);
 	$existingChar->setCurrentUP($char->swapBuffer);
 	
-	$existingChar->saveCharacter();
-	echo json_encode(array('success'=>true, 'info'=>'Character saved!'));
+	$saveResult = $existingChar->saveCharacter();
+	
+	if( $existingChar->saveCharacter() ){
+		echo json_encode(array('success'=>true, 'info'=>'Character saved!'));
+	}else{
+		echo json_encode(array('success'=>false, 'info'=>'Character failed to save'));
+	}
 	die();
 }else{
 	$character = new Character($userid, $char->name, $char->totalUP);
@@ -81,18 +84,11 @@ if ( isset($char->id) ){
 		}
 	}
 	
-	$character->saveCharacter();
-	
-	echo json_encode(array('success'=>true, 'info'=>'Character saved!'));
+	if( $character->saveCharacter() ){
+		echo json_encode(array('success'=>true, 'info'=>'Character saved!'));
+	}else{
+		echo json_encode(array('success'=>false, 'info'=>'Character failed to save'));
+	}
 	die();
 }
-
-
-
-print_r($char);
-die();
-
-
 ?>
-//$char->saveCharacter();
-//$_SESSION['char'] = serialize($char);

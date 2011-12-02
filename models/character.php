@@ -258,7 +258,7 @@ class Character{
 	//Saves the character's representation to the DB.
 	public function saveCharacter() {
 		//TODO: Call the save_cbdb_character() function.
-		save_cbdb_character($this, $this->getUserID(), get_cbdb_connection());
+		return save_cbdb_character($this, $this->getUserID(), get_cbdb_connection());
 /*		if($res->getCharID() != NULL && $res->getCharID() != "") {
 			$this->setCharID($res->getCharID());
 		}*/
