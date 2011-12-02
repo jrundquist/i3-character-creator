@@ -30,8 +30,10 @@ if ( isset($char->id) ){
 	// This is becuase we get different objects from the character and the 
 	// passed POST parameter
 	$newCardSet = array();
-	foreach ( $char->deck as $card ){
-		$newCardSet[] = $card->id;
+	if ( is_array($char->deck) && count($char->deck)>1){
+		foreach ( $char->deck as $card ){
+			$newCardSet[] = $card->id;
+		}
 	}
 	
 	$oldCardSet = array();
@@ -69,7 +71,7 @@ if ( isset($char->id) ){
 	$saveResult = $existingChar->saveCharacter();
 	
 	if( $existingChar->saveCharacter() ){
-		echo json_encode(array('success'=>true, 'info'=>'Character saved!'));
+		echo json_encode(array('success'=>true, 'info'=>$char->id));
 	}else{
 		echo json_encode(array('success'=>false, 'info'=>'Character failed to save'));
 	}
@@ -88,8 +90,9 @@ if ( isset($char->id) ){
 		}
 	}
 	
-	if( $character->saveCharacter() ){
-		echo json_encode(array('success'=>true, 'info'=>'Character saved!'));
+	$saved = $character->saveCharacter();
+	if( $saved ){
+		echo json_encode(array('success'=>true, 'info'=>$saved->getCharID()));
 	}else{
 		echo json_encode(array('success'=>false, 'info'=>'Character failed to save'));
 	}

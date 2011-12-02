@@ -157,6 +157,7 @@ function save(){
 			success: function(result){
 				if ( result.success ){
 					openDialog('saved');
+					character.id = parseInt(result.info);
 				}else{
 					alert(result.info);
 					hideOverlay();
@@ -174,7 +175,9 @@ function newChar(){
 			dataType:'json',
 			success: function(j){
 				if ( j == true ){
-					character = new Character;
+					character = new Character();
+					character.id = undefined;
+					character.deck = [];
 					resetAll();
 				}else{
 					alert("ERRORRRRR");

@@ -198,7 +198,7 @@ function save_cbdb_character($char, $userid, $dbconn) {
 	}
 	else {
 		//Then we must do an insert because the character doesn't exist yet.
-		$query = "insert into UserCharacter (charname, userid, totalup, swapbuffer, chardesc, notes, lastmodified) values('".$char->getCharName()."', '$userid', ".$char->getTotalUP().", ".$char->getCurrentUP().", '".$char->getCharDesc()."', '".$char->getNotes()."', NOW())";
+		$query = "insert into UserCharacter (charname, userid, totalup, swapbuffer, chardesc, notes, lastmodified) values('".$char->getCharName()."', '$userid', '".$char->getTotalUP()."', '".$char->getCurrentUP()."', '".$char->getCharDesc()."', '".$char->getNotes()."', NOW())";
 	}
 	$result = mysql_query($query);
 	if(!$result) {
